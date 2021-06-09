@@ -46,14 +46,43 @@ s 仅由数字和英文字母（大写和/或小写）组成
  */
 var longestPalindrome = function (s) {
   let leng = s.length;
-  let ary = [];
+  let lastIndex = 0;
   for (let i = 0; i < leng; i++) {
-    if (s.indexOf(s[i]) !== s.lastIndexOf(s[i])) {
-      if (s[i + 1] === s[s.lastIndexOf(s[i]) - 1]) {
+    lastIndex = s.lastIndexOf(s[i]);
+    if (i !== lastIndex) {
+      if (subLeng()){
 
       }
     }
   }
 };
 
-console.log(longestPalindrome("abcbc"));
+var isPalindromeStr = function (s) {
+  let leng = s.length;
+  for (let i = 0; i < leng; i++) {
+    if (leng === 1) {
+      return true;
+    }
+
+    if (s[i] === s[leng - 1]) {
+      if ((i + 1) === (leng - 1)) {
+        return true;
+      } else {
+        return isPalindromeStr(s.slice(i + 1, leng - 1));
+      }
+    } else {
+      return false;
+    }
+  }
+}
+
+// console.log(palindromeStr("cb"));
+// console.log(palindromeStr("bb"));
+// console.log(palindromeStr("bbc"));
+// console.log(palindromeStr("bcb"));
+// console.log(palindromeStr("bccb"));
+// console.log(palindromeStr("bcbb"));
+// console.log(palindromeStr("bcaacb"));
+// console.log(palindromeStr("bcaacc"));
+// console.log(palindromeStr("bcabacb"));
+// console.log(palindromeStr("bcacbacb"));

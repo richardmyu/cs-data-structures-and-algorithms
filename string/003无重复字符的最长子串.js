@@ -108,6 +108,39 @@ var lengthOfLongestSubstring = function (s) {
   return Math.max(...ary);
 };
 
+/******************
+ *     解法 3(2 的改进版)     *
+ *   104ms, 90.79%   *
+ *   41.5MB, 68.39%   *
+ ******************/
+// 1.使用数值代替数组，不存储不需要的数据；
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function (s) {
+  let str = '';
+  let subLeng = 0;
+  let leng = s.length;
+
+  if (!leng) {
+    return 0;
+  }
+
+  for (let i = 0; i < leng; i++) {
+    if (!str.includes(s[i])) {
+      str = str + s[i];
+    } else {
+      subLeng = str.length > subLeng ? str.length : subLeng;
+      str = s.slice(s.slice(0, i).lastIndexOf(s[i]) + 1, i + 1);
+    }
+  }
+  subLeng = str.length > subLeng ? str.length : subLeng;
+  return subLeng;
+};
+
+
+
 /***
  * test
  */
