@@ -37,8 +37,8 @@ s 仅由数字和英文字母（大写和/或小写）组成
 
 /******************
  *     解法 1     *
- *   200ms, 20%   *
- *   46.2MB, 7%   *
+ *   2800ms, 11.5%   *
+ *   44MB, 51.44%   *
  ******************/
 /**
  * @param {string} s
@@ -47,23 +47,33 @@ s 仅由数字和英文字母（大写和/或小写）组成
 var longestPalindrome = function (s) {
   let leng = s.length;
   let lastIndex = 0;
+  let str = "";
   for (let i = 0; i < leng; i++) {
     lastIndex = s.lastIndexOf(s[i]);
-    if (i !== lastIndex) {
-      if (subLeng()){
-
+    if (lastIndex !== -1 && i !== lastIndex) {
+      if (isPalindromeStr(s.slice(i + 1, lastIndex))) {
+        str = s.slice(i, lastIndex + 1).length > str.length ? s.slice(i, lastIndex + 1) : str;
+      } else {
+        while (s.slice(i + 1, lastIndex).includes(s[i])) {
+          lastIndex = s.slice(0, lastIndex).lastIndexOf(s[i]);
+          if (isPalindromeStr(s.slice(i + 1, lastIndex))) {
+            str = s.slice(i, lastIndex + 1).length > str.length ? s.slice(i, lastIndex + 1) : str;
+          }
+        }
       }
+    } else {
+      str = str.length >= 1 ? str : s[i];
     }
   }
+  return str;
 };
 
 var isPalindromeStr = function (s) {
   let leng = s.length;
+  if (leng === 0 || leng === 1) {
+    return true;
+  }
   for (let i = 0; i < leng; i++) {
-    if (leng === 1) {
-      return true;
-    }
-
     if (s[i] === s[leng - 1]) {
       if ((i + 1) === (leng - 1)) {
         return true;
@@ -76,13 +86,43 @@ var isPalindromeStr = function (s) {
   }
 }
 
-// console.log(palindromeStr("cb"));
-// console.log(palindromeStr("bb"));
-// console.log(palindromeStr("bbc"));
-// console.log(palindromeStr("bcb"));
-// console.log(palindromeStr("bccb"));
-// console.log(palindromeStr("bcbb"));
-// console.log(palindromeStr("bcaacb"));
-// console.log(palindromeStr("bcaacc"));
-// console.log(palindromeStr("bcabacb"));
-// console.log(palindromeStr("bcacbacb"));
+
+
+/***
+ * test
+ */
+const assert = require('assert').strict;
+
+// assert.deepStrictEqual(isPalindromeStr(""), true);
+// assert.deepStrictEqual(isPalindromeStr("bb"), true);
+// assert.deepStrictEqual(isPalindromeStr("bbc"), false);
+// assert.deepStrictEqual(isPalindromeStr("bcb"), true);
+// assert.deepStrictEqual(isPalindromeStr("bccb"), true);
+// assert.deepStrictEqual(isPalindromeStr("bcbb"), false);
+// assert.deepStrictEqual(isPalindromeStr("bcaacb"), true);
+// assert.deepStrictEqual(isPalindromeStr("bcaacc"), false);
+// assert.deepStrictEqual(isPalindromeStr("bcabacb"), true);
+// assert.deepStrictEqual(isPalindromeStr("bcacbacb"), false);
+
+assert.deepStrictEqual(longestPalindrome("babad"), "bab");
+assert.deepStrictEqual(longestPalindrome("cbbd"), "bb");
+assert.deepStrictEqual(longestPalindrome("a"), "a");
+assert.deepStrictEqual(longestPalindrome("ac"), "a");
+
+assert.deepStrictEqual(longestPalindrome("cb"), "c");
+assert.deepStrictEqual(longestPalindrome("bb"), "bb");
+assert.deepStrictEqual(longestPalindrome("bbc"), "bb");
+assert.deepStrictEqual(longestPalindrome("bcb"), "bcb");
+assert.deepStrictEqual(longestPalindrome("bccb"), "bccb");
+assert.deepStrictEqual(longestPalindrome("bcbb"), "bcb");
+assert.deepStrictEqual(longestPalindrome("bcaacb"), "bcaacb");
+assert.deepStrictEqual(longestPalindrome("bcaacc"), "caac");
+assert.deepStrictEqual(longestPalindrome("bcabacb"), "bcabacb");
+assert.deepStrictEqual(longestPalindrome("bcacbacb"), "bcacb");
+assert.deepStrictEqual(longestPalindrome("abbcacbbabbbaca"), "abbcacbba");
+
+assert.deepStrictEqual(longestPalindrome("dbbf"), "bb");
+assert.deepStrictEqual(longestPalindrome("cdbbfc"), "bb");
+assert.deepStrictEqual(longestPalindrome("bcdbbfcb"), "bb");
+assert.deepStrictEqual(longestPalindrome("bccbbfcb"), "bccb");
+assert.deepStrictEqual(longestPalindrome("abcdbbfcba"), "bb");
