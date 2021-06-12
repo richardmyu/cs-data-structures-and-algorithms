@@ -1,3 +1,5 @@
+const isPalindromeStr = require("./tool");
+const { longP } = require("./test");
 
 /**
 解法 2
@@ -7,9 +9,6 @@
 思路
   以正则匹配出所有的以同一字符开头结尾的子串，然后依次判断是否为回文字符，并返回最长回文子串
  */
-
-const isPalindromeStr = require("./tool");
-const { longP } = require("./test");
 
 // TODO: 待完成
 /**

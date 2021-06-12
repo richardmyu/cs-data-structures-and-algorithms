@@ -1,3 +1,5 @@
+const testFn = require("./test");
+
 /**
 解法 1
   200ms, 20%
@@ -10,8 +12,6 @@
   1.使用了双循环，时间复杂度比较大；
   2.开辟了一个数组和一个字符串空间，内存消耗也大；
  */
-
-const testFn = require("./test");
 
 /**
  * @param {string} s

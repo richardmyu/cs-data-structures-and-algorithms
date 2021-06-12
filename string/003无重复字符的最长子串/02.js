@@ -1,3 +1,4 @@
+const testFn = require("./test");
 
 /**
 解法 2
@@ -11,8 +12,6 @@
   1.使用了单循环，再有一次数组循环；
   2.开辟了一个数组和一个字符串空间，内存消耗也大；
  */
-
-const testFn = require("./test");
 
 /**
  * @param {string} s

@@ -1,3 +1,6 @@
+const isPalindromeStr = require("./tool");
+const { longP } = require("./test");
+
 /**
 解法 1
   2800ms, 11.5%
@@ -12,9 +15,6 @@
   44MB, 51% / 44MB, 49.83% / 44.5MB, 42.37%
   时间少了一半以上
  */
-
-const isPalindromeStr = require("./tool");
-const { longP } = require("./test");
 
 /**
  * @param {string} s
