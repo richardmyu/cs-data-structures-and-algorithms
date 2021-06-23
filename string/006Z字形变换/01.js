@@ -36,7 +36,6 @@ const cv = require("./test");
  * @param {number} numRows
  * @return {string}
  */
-// TODO: 输出排序有偏移，待调整
 var convert = function (s, numRows) {
   if (numRows <= 1) {
     return s;
