@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require("./test_case");
 
 /**
 解法 1
