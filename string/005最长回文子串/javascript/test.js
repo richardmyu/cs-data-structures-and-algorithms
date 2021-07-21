@@ -44,6 +44,7 @@ const longP = (fn, msg) => {
   assert.deepStrictEqual(fn("bcdbbfcb"), "bb");
   assert.deepStrictEqual(fn("bccbbfcb"), "bccb");
   assert.deepStrictEqual(fn("abcdbbfcba"), "bb");
+  console.log("all cases pass the test");
   console.log("--- END ---");
 }
 

@@ -1,5 +1,3 @@
-const { isP } = require("./test");
-
 /*
 var isPalindromeStr = function (s) {
   let leng = s.length;
@@ -36,7 +34,5 @@ const isPalindromeStr = function (s) {
   }
   return true;
 }
-
-// isP(isPalindromeStr);
 
 module.exports = isPalindromeStr;
