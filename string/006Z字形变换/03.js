@@ -1,4 +1,4 @@
-const cv = require("./test");
+const testFn = require("./test");
 
 /**
 解法 2
@@ -47,6 +47,7 @@ const cv = require("./test");
 
  */
 
+// TODO: 待完成
 /**
  * @param {string} s
  * @param {number} numRows
@@ -72,4 +73,4 @@ var convert = function (s, numRows) {
   return str;
 };
 
-cv(convert);
+testFn(convert, '解法 3');

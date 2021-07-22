@@ -15,6 +15,7 @@ const isP = (fn) => {
   assert.deepStrictEqual(fn("bcaacc"), false);
   assert.deepStrictEqual(fn("bcabacb"), true);
   assert.deepStrictEqual(fn("bcacbacb"), false);
+  console.log("all cases pass the test");
   console.log("--- END ---");
 }
 
