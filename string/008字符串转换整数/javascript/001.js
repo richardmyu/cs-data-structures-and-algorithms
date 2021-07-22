@@ -2,7 +2,8 @@ const testFn = require("./test");
 
 /**
 解法 1
-
+  76ms, 98.97%
+  40.4MB, 27.80%
 
 思路
   借用 parseFloat，再加一个范围判断；
@@ -30,14 +31,29 @@ var myAtoi = function (s) {
   }
 
   for (let j of ['+', '-', '.']) {
-    if (substr.indexOf(j) !== substr.lastIndexOf(j)) {
-      secdotIndex = substr.slice(substr.indexOf(j) + 1).indexOf(j) + substr.indexOf(j) + 1;
-      substr = substr.slice(0, secdotIndex)
+    // 多一层循环，用以处理多符号中不同符号的情况
+    for (let z of ['+', '-', '.']) {
+      // 单个符号出现多个，
+      if (substr.indexOf(j) !== substr.lastIndexOf(j)) {
+        secdotIndex = substr.slice(substr.indexOf(j) + 1).indexOf(j) + substr.indexOf(j) + 1;
+        substr = substr.slice(0, secdotIndex)
+      }
+      // + - 出现在非首位
+      if (j !== '.' && substr[0] !== j && substr.includes(j)) {
+        substr = substr.slice(0, substr.indexOf(j));
+      }
     }
   }
+
+  // 单符号处理
+  substr = substr === '+' ? '' : substr === '-' ? '' : substr === '.' ? '' : substr;
+
   num = Number(substr);
+  // 范围处理
   num = num > MAXNUM ? MAXNUM : num < MINNUM ? MINNUM : num;
+
   return num;
+  // return Number(substr) > MAXNUM ? MAXNUM : Number(substr) < MINNUM ? MINNUM : Number(substr);
 };
 
 testFn(myAtoi, '解法 1')
