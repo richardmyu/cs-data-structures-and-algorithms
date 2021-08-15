@@ -9,6 +9,11 @@ const testFn = require("./test");
 
  */
 
+
+// TODO: 1.多余匹配和不足匹配 [x]
+// TODO: 2.匹配中途不匹配
+// TODO: 3. * 匹配不够慎重
+// TODO:
 /**
 * @param {string} s
 * @param {string} p
@@ -20,31 +25,36 @@ var isMatch = function (s, p) {
     return s.length === p.length ? s === p : false;
   }
   // 错误模式
-  if (p[0] === '*') {
+  if (p[0] === '*' || p.includes('**')) {
     return false;
   }
 
-  sLeng = s.length;
-  pLeng = p.length;
-  nIndex = 0;
+  var sLeng = s.length,
+    pLeng = p.length,
+    snIndex = 0, // 字符指针
+    pnIndex = 0, // 正则指针
+    isMatch = false; // 是否已进入匹配
 
   outs:
-  for (let i = 0; i < sLeng; i++) {
-    for (let j = nIndex; j < pLeng; j++) {
-      console.log('000');
-      console.log('   ', `s[${i}]=${s[i]}`, `p[${j}]=${p[j]}`);
+  for (let i = snIndex; i < sLeng; i++) {
+    for (let j = pnIndex; j < pLeng; j++) {
+      // console.log('000');
+      // console.log('   ', `s[${i}] = ${s[i]} p[${j}] = ${p[j]}`);
+
 
       // 如果字符相同，或者遇到 `.`、`*`，跳出本轮循环，在外循环中进行下一位比较
       if (p[j] === s[i] || p[j] === '.' || (p[j] === '*' && s[i] === p[j - 1])) {
-        console.log('  --------');
-        console.log('  111-1', `s[${i}]=${s[i]}`, `p[${j}]=${p[j]}`);
-        nIndex = j + 1;
-        console.log(`    nIndex=${nIndex}`);
+        isMatch = true;
+        // console.log('  --------');
+        // console.log('  111-1', `s[${i}] = ${s[i]} p[${j}] = ${p[j]}`);
+        snIndex = i + 1;
+        pnIndex = j + 1;
+        // console.log(`    snIndex = ${snIndex} pnIndex = ${pnIndex}`);
         // 不完全匹配（两种类型）
-        console.log("    i: ", i, "j: ", j);
+        // console.log("    i: ", i, "j: ", j);
         // 不完全匹配 - 1.字符多余
-        if (nIndex === pLeng && i < (sLeng - 1)) {
-          console.log('  111-2', `s[${i}]=${s[i]}`, `p[${j}]=${p[j]}`);
+        if (pnIndex === pLeng && i < (sLeng - 1)) {
+          // console.log('  111-2', `s[${i}]=${s[i]}`, `p[${j}]=${p[j]}`);
           if (p.slice(-1) === "*" && s.slice(sLeng).split('').every(n => n === p.slice(-2, -1))) {
             return true;
           } else {
@@ -52,40 +62,33 @@ var isMatch = function (s, p) {
           }
         }
         // 不完全匹配 - 2.字符不够
-        if (i === (sLeng - 1) && nIndex !== pLeng) {
-          console.log('  111-3', `s[${i}]=${s[i]}`, `p[${j}]=${p[j]}`);
-          leng = pLeng - nIndex;
+        if (i === (sLeng - 1) && pnIndex !== pLeng) {
+          // console.log('  111-3', `s[${i}]=${s[i]}`, `p[${j}]=${p[j]}`);
+          leng = pLeng - pnIndex;
           if (leng > 1 || (p.slice(-1) !== '.' && p.slice(-1) !== "*")) {
-            console.log('oh no noono');
-            console.log(`    i=${i}`);
-            console.log(`    sLeng=${sLeng}`);
-            console.log(`    pLeng=${pLeng}`);
-            console.log(`    nIndex=${nIndex}`);
-            console.log(`    p[-1]=${p[-1]}`);
+            // console.log('oh no noono');
+            // console.log(`    i=${i}`);
+            // console.log(`    sLeng=${sLeng}`);
+            // console.log(`    pLeng=${pLeng}`);
+            // console.log(`    pnIndex=${pnIndex}`);
+            // console.log(`    p.slice(-1)=${p.slice(-1)}`);
             return false;
           }
-
-
         }
         continue outs;
+      } else {
+        // console.log('000 end');
+        // console.log('   ', `s[${i}] = ${s[i]} p[${j}] = ${p[j]}`);
+        if (isMatch) {
+          // 匹配中途不匹配，字符指针归 0
+          // console.log(`    snIndex = ${snIndex} pnIndex = ${pnIndex}`);
+          snIndex = 0;
+          // pnIndex++;
+          // console.log(`    snIndex = ${snIndex} pnIndex = ${pnIndex}`);
+          continue outs;
+        }
       }
-      // `*`
-      // if (p[j] === '*' && s[i] === p[j - 1]) {
-      //   console.log('    111-2', `s[${i}]=${s[i]}`, `p[${j}]=${p[j]}`);
-      //   nIndex = j + 1;
-      //   console.log(`nIndex=${nIndex}`);
-      //   continue outs;
-      // }
-
     }
-    // console.log('222', s[i], p[nIndex]);
-    // if (s[i] === p[nIndex] || p[nIndex] === '.' || p[nIndex] === '*') {
-    //   console.log('333', s[i], p[nIndex]);
-    //   nIndex++;
-    //   continue;
-    // } else {
-    //   return false;
-    // }
   }
   return true;
 };
