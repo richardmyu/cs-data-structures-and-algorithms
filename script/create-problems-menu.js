@@ -1,13 +1,16 @@
 const fs = require("fs")
-const FILE_PATH="../problems/"
-const fileLists=[]
+const FILE_PATH = "~/Documents/githubproject/leetcode-practice/problems"
+const fileObj = {}
 console.log("Creating problems menu...")
-
+console.log(fs.existsSync(FILE_PATH));
 if(fs.existsSync(FILE_PATH)){
+  console.log('11');
   let fileList=fs.readdirSync(FILE_PATH);
+  console.log('22');
   fileList.forEach(function(file){
-    fileLists.push(file.slice(0,-3))
+    console.log(file.slice(0,2));
+    fileObj[file.slice(0,2)]=file.slice(4,-2)
   })
 }
-console.log(fileLists);
+console.log(fileObj);
 
