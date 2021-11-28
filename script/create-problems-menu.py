@@ -9,7 +9,6 @@ file_lists = []
 
 for directory in problems_list:
     if(os.path.isfile(directory) == False):
-        print('---')
         file_lists.append(os.path.basename(directory)[:-3])
 
 print(file_lists)
