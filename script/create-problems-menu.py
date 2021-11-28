@@ -6,24 +6,16 @@ import sys
 LINUX_WORK_CWD = '/home/ym/Documents/githubproject/leetcode-practice/'
 WIN_WORKS_CWD = '/mywork/hubproject/leetcode-practice/'
 current_cwd = ''
-# 语言名称（用来命名文件夹）
-lang_name = {
-    'js': 'javascript',
-    'javascript': 'javascript',
-    'py': 'python',
-    'python': 'python',
-    'ts': 'typescript',
-    'typescript': 'typescript'
+
+lang_config = {
+    'js': {'name': 'javascripttest', 'code': 'js', 'case_tem': 'js-01.txt', 'test_tem': 'js-test.txt'},
+    'py': {'name': 'python', 'code': 'py', 'case_tem': 'py-01.txt', 'test_tem': 'py-test.txt'},
+    'ts': {'name': 'typescript', 'code': 'ts', 'case_tem': 'ts-01.txt', 'test_tem': 'test.txt'}
 }
-# 语言类型（对应编程语言文件类型后缀）
-lang_type = {
-    'js': 'js',
-    'javascript': 'js',
-    'py': 'py',
-    'python': 'py',
-    'ts': 'ts',
-    'typescript': 'ts'
-}
+
+lang_config['javascript'] = lang_config['js']
+lang_config['python'] = lang_config['py']
+lang_config['typescript'] = lang_config['ts']
 
 
 def check_env():
@@ -53,7 +45,7 @@ def check_type():
         
         '''
         print(text)
-    elif not sys.argv[1] in lang_name:
+    elif not sys.argv[1] in lang_config.keys():
         raise IOError("参数有误，仅限于 js/javascript/py/python/ts/typescript")
     else:
         return True
@@ -85,12 +77,25 @@ def generate_menu():
     return problems_dict
 
 
+def read_template():
+    """读取模板内容"""
+    case_context = ''
+    test_context = ''
+    tem_path = os.path.join(current_cwd, 'template')
+    with open(os.path.join(tem_path, lang_config[sys.argv[1]]['case_tem']), 'r') as case_file:
+        case_context = case_file.read()
+    # print(case_file)
+    with open(os.path.join(tem_path, lang_config[sys.argv[1]]['test_tem']), 'r') as test_file:
+        test_context = test_file.read()
+    return case_context, test_context
+
+
 def create_menu(menus):
     """生成指定语言类型文件目录"""
     print("--- creating problems files ---")
-    lang_path = os.path.join(current_cwd, lang_name[sys.argv[1]])
+    lang_path = os.path.join(current_cwd, lang_config[sys.argv[1]]['name'])
     if not os.path.exists(lang_path):
-        os.mkdir(lang_name[sys.argv[1]])
+        os.mkdir(lang_config[sys.argv[1]]['name'])
 
     # TODO: javascript
     os.chdir(lang_path)
@@ -117,60 +122,63 @@ def create_menu(menus):
                     os.mkdir(file)
                 # TODO: 003-xxx
                 os.chdir(file_path)
-                code_file = os.path.join(file_path, '01.' + lang_type[sys.argv[1]])
-                test_file = os.path.join(file_path, 'test.' + lang_type[sys.argv[1]])
+                code_file = os.path.join(file_path, 'case01.' + lang_config[sys.argv[1]]['code'])
+                test_file = os.path.join(file_path, 'test.' + lang_config[sys.argv[1]]['code'])
                 print('---')
                 # print(code_file)
                 # print(test_file)
+                case_txt, test_txt = read_template()
+                print('txt----', case_txt)
+                print(test_txt)
                 if not os.path.exists(code_file):
                     f_code = open(code_file, 'w')
-                    text = '''
-                    const testFn = require("./test");
-
-                    /**
-                    解法 1
-                    
-                    思路
-
-                    小结
-
-                    */
-
-                    var fn = function () {
-                    };
-
-                    testFn(fn,"解法 1");
-
-                    '''
-                    f_code.write(text)
+                    # text = '''
+                    # const testFn = require("./test");
+                    #
+                    # /**
+                    # 解法 1
+                    #
+                    # 思路
+                    #
+                    # 小结
+                    #
+                    # */
+                    #
+                    # var fn = function () {
+                    # };
+                    #
+                    # testFn(fn,"解法 1");
+                    #
+                    # '''
+                    f_code.write(case_txt)
                     f_code.close()
                 if not os.path.exists(test_file):
                     f_test = open(test_file, 'w')
-                    text = '''
-                    /***
- * test
- */
-const assert = require('assert').strict;
-
-const testFn = (fn,msg) => {
-  console.log(`--- test ${msg} ---`);
-  assert.deepStrictEqual(fn("abcabcbb"), 3);
-  assert.deepStrictEqual(fn("bbbb"), 1);
-  assert.deepStrictEqual(fn("pwwkew"), 3);
-  assert.deepStrictEqual(fn(""), 0);
-  assert.deepStrictEqual(fn(" "), 1);
-  assert.deepStrictEqual(fn(" $%"), 3);
-  assert.deepStrictEqual(fn(" $% "), 3);
-  assert.deepStrictEqual(fn(" $% *&^%"), 6);
-  assert.deepStrictEqual(fn("abcabcd"), 4);
-  console.log("all cases pass the test");
-  console.log("--- END ---");
-}
-
-module.exports = testFn;
-
-                    '''
-                    f_test.write(text)
+                    #                     text = '''
+                    #                     /***
+                    #  * test
+                    #  */
+                    # const assert = require('assert').strict;
+                    #
+                    # const testFn = (fn,msg) => {
+                    #   console.log(`--- test ${msg} ---`);
+                    #   assert.deepStrictEqual(fn("abcabcbb"), 3);
+                    #   assert.deepStrictEqual(fn("bbbb"), 1);
+                    #   assert.deepStrictEqual(fn("pwwkew"), 3);
+                    #   assert.deepStrictEqual(fn(""), 0);
+                    #   assert.deepStrictEqual(fn(" "), 1);
+                    #   assert.deepStrictEqual(fn(" $%"), 3);
+                    #   assert.deepStrictEqual(fn(" $% "), 3);
+                    #   assert.deepStrictEqual(fn(" $% *&^%"), 6);
+                    #   assert.deepStrictEqual(fn("abcabcd"), 4);
+                    #   console.log("all cases pass the test");
+                    #   console.log("--- END ---");
+                    # }
+                    #
+                    # module.exports = testFn;
+                    #
+                    #                     '''
+                    f_test.write(test_txt)
                     f_test.close()
                 # 切回分类
                 os.chdir(type_path)
