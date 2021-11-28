@@ -2,7 +2,7 @@
 
 LeetCode 练习集
 
-[ ] javascript
-[ ] python
-[ ] typescript
+- [ ] javascript
+- [ ] python
+- [ ] typescript
 
