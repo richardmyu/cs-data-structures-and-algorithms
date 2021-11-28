@@ -6,6 +6,7 @@ import sys
 LINUX_WORK_CWD = '/home/ym/Documents/githubproject/leetcode-practice/'
 WIN_WORKS_CWD = '/mywork/hubproject/leetcode-practice/'
 current_cwd = ''
+# 语言名称（用来命名文件夹）
 lang_name = {
     'js': 'javascript',
     'javascript': 'javascript',
@@ -14,6 +15,7 @@ lang_name = {
     'ts': 'typescript',
     'typescript': 'typescript'
 }
+# 语言类型（对应编程语言文件类型后缀）
 lang_type = {
     'js': 'js',
     'javascript': 'js',
@@ -25,6 +27,7 @@ lang_type = {
 
 
 def check_env():
+    """判断当前运行环境，选择合适的路径"""
     print('env: %s; path: %s', os.name, os.getcwd())
     # heck env
     global current_cwd
@@ -39,7 +42,7 @@ def check_env():
 
 
 def check_type():
-    """根据命令行参数，判断生成文件类型"""
+    """处理命令行参数"""
     print(sys.argv)
     if len(sys.argv) < 2:
         raise IOError("缺少参数。使用 python xx.py -h/--help 来获取帮助。")
@@ -83,7 +86,7 @@ def generate_menu():
 
 
 def create_menu(menus):
-    """生成文件目录"""
+    """生成指定语言类型文件目录"""
     print("--- creating problems files ---")
     lang_path = os.path.join(current_cwd, lang_name[sys.argv[1]])
     if not os.path.exists(lang_path):

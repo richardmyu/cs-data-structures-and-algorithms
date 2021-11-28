@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-from longest_substring import length_of_longest_substring
-
+from 01 import length_of_longest_substring
 
 class LongestSubstringTestCase(unittest.TestCase):
     """测试 longest_substring.py"""
