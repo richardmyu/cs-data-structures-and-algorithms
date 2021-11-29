@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-from longest_substring import length_of_longest_substring
+from case01 import length_of_longest_substring
 
 
-class LongestSubstringTestCase(unittest.TestCase):
-    """测试 longest_substring.py"""
-
+class TestCase(unittest.TestCase):
     def test_longest_substring(self):
         self.assertEqual(length_of_longest_substring("abcabcbb"), 3)
         self.assertEqual(length_of_longest_substring("bbbb"), 1)
