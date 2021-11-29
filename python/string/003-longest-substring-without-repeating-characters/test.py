@@ -4,7 +4,7 @@ import unittest
 from case01 import length_of_longest_substring
 
 
-class TestCase(unittest.TestCase):
+class TestStringCase(unittest.TestCase):
     def test_longest_substring(self):
         self.assertEqual(length_of_longest_substring("abcabcbb"), 3)
         self.assertEqual(length_of_longest_substring("bbbb"), 1)
@@ -17,4 +17,5 @@ class TestCase(unittest.TestCase):
         self.assertEqual(length_of_longest_substring("abcabcd"), 4)
 
 
-unittest.main()
+if __name__ == '__main__':
+    unittest.main()

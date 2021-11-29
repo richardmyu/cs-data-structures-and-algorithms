@@ -12,4 +12,5 @@ class LongestSubstringTestCase(unittest.TestCase):
         self.assertEqual(length_of_longest_substring("bbbb"), 1)
 
 
-unittest.main()
+if __name__ == '__main__':
+    unittest.main()
