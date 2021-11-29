@@ -2,17 +2,17 @@
                     const testFn = require("./test");
 
                     /**
-                    瑙ｆ硶 1
+                    解法 1
                     
-                    鎬濊矾
+                    思路
 
-                    灏忕粨
+                    小结
 
                     */
 
                     var fn = function () {
                     };
 
-                    testFn(fn,"瑙ｆ硶 1");
+                    testFn(fn,"解法 1");
 
                     
