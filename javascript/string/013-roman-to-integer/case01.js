@@ -12,8 +12,8 @@ const testFn = require("./test");
  * @param {}
  * @return {}
  */
-const intToRoman = function (s) {
+const fn = function (s) {
 
 };
 
-testFn(intToRoman,"解法 1");
+testFn(fn,"解法 1");
