@@ -24,7 +24,9 @@ const testFn = (fn, msg) => {
   // assert.deepStrictEqual(fn("aabbcdg", "a*b*.*"), true);
   // assert.deepStrictEqual(fn("mississippi", "mis*is*p*."), false);
   // assert.deepStrictEqual(fn("aab", "a*c*a*b"), true);
-  assert.deepStrictEqual(fn("abb", "a*c*a*bb"), true);
+  // assert.deepStrictEqual(fn("abb", "a*c*a*bb"), true);
+  assert.deepStrictEqual(fn("abc", "ac*bc"), true);
+  assert.deepStrictEqual(fn("abc", "a*bc"), true);
   // assert.deepStrictEqual(fn("aab", "a*b*a*b"), true);
   // assert.deepStrictEqual(fn("aabb", "a*b*a*b"), false);
   // assert.deepStrictEqual(fn("acb", "a*b*a*b*c*"), true);
