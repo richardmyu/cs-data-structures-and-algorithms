@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+"""根据已有的 problems 目录生成指定语言的文件夹
+
+用法
+    py create-menu.py language
+"""
 
 import os
 import sys
@@ -41,7 +46,6 @@ def check_env():
 
 def check_type():
     """处理命令行参数"""
-    # print(sys.argv)
     if len(sys.argv) < 2:
         raise IOError("缺少参数。使用 python xx.py -h/--help 来获取帮助。")
     elif sys.argv[1] == '-h' or sys.argv[1] == '--help':
@@ -88,11 +92,15 @@ def read_template():
     """读取模板内容"""
     print("--- get template ---")
     tem_path = os.path.join(current_cwd, 'template')
+
+    # 编码文件
     with open(os.path.join(tem_path, lang_config[sys.argv[1]]['case_tem']), 'r') as case_file:
         case_context = case_file.read()
-    # print(case_file)
+
+    # 测试文件
     with open(os.path.join(tem_path, lang_config[sys.argv[1]]['test_tem']), 'r') as test_file:
         test_context = test_file.read()
+
     return case_context, test_context
 
 
@@ -100,7 +108,7 @@ def create_menu(menus):
     """生成指定语言类型文件目录
 
     Args:
-        menus: dict
+        menus(dict): The files list.
 
     """
     print("--- creating problems files ---")
@@ -115,10 +123,8 @@ def create_menu(menus):
     # 类型处理
     menu_types = menus.items()
     for item in menu_types:
-        # print(item)
         menu_type, file_lists = item
         type_path = os.path.join(lang_path, menu_type)
-        # print(menu_type, file_lists)
         if not os.path.exists(type_path):
             os.mkdir(menu_type)
 
@@ -134,7 +140,6 @@ def create_menu(menus):
                     os.mkdir(file)
                 # 进入语言包三级目录--问题
                 os.chdir(file_path)
-                # print('-- {}'.format(file))
                 code_file = os.path.join(file_path, 'case01.' + lang_config[sys.argv[1]]['code'])
                 test_file = os.path.join(file_path, 'test.' + lang_config[sys.argv[1]]['code'])
 
