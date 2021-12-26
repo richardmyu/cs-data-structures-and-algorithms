@@ -81,10 +81,10 @@ def generate_menu():
             for file in file_lists:
                 file_path = os.path.join(item_path, file)
                 if os.path.isfile(file_path):
-                    item_lists.append(file[0:-3])
+                    # 根据问题文件类型调整
+                    item_lists.append(file[0:-4])
             problems_dict.setdefault(item, item_lists)
 
-    # print(problems_dict)
     return problems_dict
 
 
@@ -111,7 +111,7 @@ def create_menu(menus):
         menus(dict): The files list.
 
     """
-    print("--- creating problems files ---")
+    print("--- creating problems files -- start ---")
     lang_path = os.path.join(current_cwd, lang_config[sys.argv[1]]['name'])
     if not os.path.exists(lang_path):
         os.mkdir(lang_config[sys.argv[1]]['name'])
@@ -135,7 +135,6 @@ def create_menu(menus):
 
             for file in file_lists:
                 file_path = os.path.join(type_path, file)
-                print('-- {}'.format(file_path), os.path.exists(file_path))
                 if not os.path.exists(file_path):
                     os.mkdir(file)
                 # 进入语言包三级目录--问题
@@ -160,7 +159,7 @@ def create_menu(menus):
 
     # 切回项目根目录
     os.chdir(current_cwd)
-    print("--- finish ---")
+    print("--- creating problems files -- finish ---")
 
 
 if __name__ == '__main__':
