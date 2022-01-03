@@ -10,7 +10,7 @@ const testFn = require("./test");
 小结
  */
 
-// TODO：有点复杂，没有实现
+// TODO: 生成全部组合有点复杂，这一步没有实现
 
 /**
  * @param {number} n
