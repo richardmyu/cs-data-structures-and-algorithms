@@ -2,15 +2,24 @@ const testFn = require("./test");
 
 /**
 解法 1
+  100ms, 7.13%
+  39.6MB, 19.93%
 
 思路
-  1.生成全序组合；C(n,m)=n!/(m!(n-m)!)
-  2.过滤；
+  递归法：
+
+  ()   --》 三个插入点 --》()()  (())
+  ()() --》 五个插入点 --》()()()  (())()  ()(())
+  (()) --》          --》()(())  (()())  ((()))
 
 小结
+  之前一直有两种思路：
+    一种是穷竭法，生成全部可能组合，再判断，卡在了生成组合这一步，留在 case02，看学习了算法以后，还能不能解；
+    另一种是递归法，但是总觉得递归可能会遗漏，没有具体思考；在第一种方法碰壁后，去讨论去看了看，官方提供了三种，但没兴趣看，毕竟是 c；讨论大多都是说递归，于是我又仔细研究了递归，发现，其实递归，在有效的括号范围内，不仅没有遗漏，还有重复，这样一来，问题就简单多了。
+
+
  */
 
-// TODO: 卡了
 /**
  * @param {number} n
  * @return {string[]}
@@ -19,78 +28,22 @@ const generateParenthesis = function (n) {
   if (n < 1 || n > 8) {
     return false;
   }
-  let a = ['(', ')'];
-  let r = ['', ''];
+  let r = [];
   if (n === 1) {
-    for (let i = 0; i < 2; i++) {
-      for (let j = 0; j < 2; j++) {
-        r.push(a[i] + a[j]);
+    r.push('()');
+  } else {
+    let list = generateParenthesis(n - 1);
+    for (let i = 0; i < list.length; i++) {
+      for (let j = 0; j < list[i].length; j++) {
+        r.push(list[i].slice(0, j) + '()' + list[i].slice(j));
       }
     }
   }
-  if (n === 2) {
-    for (let x = 0; x < 2; x++) {
-      for (let y = 0; y < 2; y++) {
-        for (let z = 0; z < 2; z++) {
-          r.push(a[x] + a[y] + a[z]);
-        }
-      }
-    }
-  }
-  r = r.map(item => {
-    if (isValid(item)) {
-      return item;
-    } else {
-      return '';
-    }
-  });
-  for (let i = 0; i < r.length; i++) {
-    if (r[i].length === 0) {
-      r.splice(i, 1);
-      i--;
-    }
-    if (r.indexOf(r[i]) !== r.lastIndexOf(r[i])) {
-      r.splice(i, 1);
-      i--;
-    }
-  }
-  return r;
+  return [...new Set(r)];
 };
 
-const isValid = function (s) {
-  if (s.length < 1 || s.length % 2) {
-    return false;
-  }
-  for (let i = 0; i < s.length; i++) {
-    if (s[i] === '(' && s[i + 1] === ')') {
-      s = s.replace('()', '');
-      i -= 2;
-    }
-    if (s[i] === '[' && s[i + 1] === ']') {
-      s = s.replace('[]', '');
-      i -= 2;
-    }
-    if (s[i] === '{' && s[i + 1] === '}') {
-      s = s.replace('{}', '');
-      i -= 2;
-    }
-  }
-  return s.length === 0;
-};
+// generateParenthesis(1);
+// generateParenthesis(2);
+// generateParenthesis(3);
 
-const squareParentheses = function (n) {
-  // console.log('----', n);
-  let a = ['(', ')'];
-  if (n === 0) {
-    // console.log('===',[a[0] + a[1], a[1] + a[0]]);
-    return [a[0] + a[1], a[1] + a[0]];
-  }
-  if (n > 0) {
-    return squareParentheses(n - 1);
-  }
-}
-
-console.log(squareParentheses(0));
-console.log(squareParentheses(1));
-
-// testFn(generateParenthesis, "解法 1");
+testFn(generateParenthesis, "解法 1");
