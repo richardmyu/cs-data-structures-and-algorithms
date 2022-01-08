@@ -9,6 +9,9 @@ const testFn = require("./test");
   3.注意：找出所有满足的组合字符串，至少有一个；
 
 小结
+  1.真坑
+  不使用全局匹配，会有遗漏；使用了全局匹配（exec），还有遗漏;
+  2.堆溢出，只能优化 comb;
  */
 
 /**
@@ -18,19 +21,47 @@ const testFn = require("./test");
  */
 const findSubstring = function (s, words) {
   let l = comb(words);
-  console.log('---===', l);
   let r = [];
+  // for (let i = 0; i < l.length; i++) {
+  //   let reg = new RegExp('' + l[i], 'g');
+  //   let flag;
+  //   while ((flag = reg.exec(s)) !== null) {
+  //     console.log(reg.index);
+  //     r.push(reg.index);
+  //   }
+  // }
   for (let i = 0; i < l.length; i++) {
-    flag = s.indexOf(l[i]);
-    if (flag !== -1) {
-      r.push(flag)
+    let nextInd = s.indexOf(l[i]);
+    let prevInd = s.lastIndexOf(l[i]);
+    if (nextInd === prevInd) {
+      if (nextInd !== -1) {
+        r.push(nextInd);
+      }
+    } else {
+      if (nextInd !== -1) {
+        r.push(nextInd);
+      }
+      if (prevInd !== -1) {
+        r.push(prevInd);
+      }
+      while (s.indexOf(l[i], nextInd + 1) !== s.slice(0, prevInd + l[i].length).lastIndexOf(l[i])) {
+        nextInd = s.indexOf(l[i], nextInd + 1);
+        prevInd = s.slice(0, prevInd + l[i].length - 1).lastIndexOf(l[i]);
+        if (nextInd !== -1) {
+          r.push(nextInd);
+        }
+        if (prevInd !== -1) {
+          r.push(prevInd);
+        }
+      }
     }
   }
-  console.log(r, r.sort((a, b) => a - b));
+  r = [...new Set(r)];
   return r.sort((a, b) => a - b);
 };
+
+
 const comb = function (words) {
-  console.log('1--', words);
   if (!Array.isArray(words)) {
     return;
   }
@@ -47,46 +78,24 @@ const comb = function (words) {
     r.push(words[1].concat(words[0]));
   }
   if (leng > 2) {
-    // words 不包含最后一位的组合
-
-    // 原始组合元素的长度
     let basicLeng = words[0].length;
-
-    for (let i = 0; i < leng - 1; i++) {
+    for (let i = 0; i < leng; i++) {
       let ary = comb(words.slice(0, i).concat(words.slice(i + 1)));
-      console.log('--3', ary, words);
-      console.log('**', i, ary.length);
-      console.log('3--', i, ary[i], words[i]);
       // 组合后的元素长度
       let subLeng = ary[0].length;
       // 组合元素可插入新元素的位置个数
       let jLeng = Math.ceil(subLeng / basicLeng) + 1;
-      for (let j = 0; j < jLeng; j++) {
-        console.log('--4', j, ary[i]);
-        r.push(ary[i].slice(0, j * basicLeng) + words[i] + ary[i].slice(j * basicLeng));
-        console.log('4--', r);
-      }
-      // debugger;
-    }
-    // 处理最后一位的组合
-    let ary = comb(words.slice(0, -1));
-    console.log('===', ary);
-    // 组合后的元素长度
-    let subLeng = ary[0].length;
-    // 组合元素可插入新元素的位置个数
-    let jLeng = Math.ceil(subLeng / basicLeng) + 1;
-    for (let i = 0; i < ary.length; i++) {
-      for (let j = 0; j < jLeng; j++) {
-        console.log('==5', j, ary[i], words.slice(-1).join(''));
-        r.push(ary[i].slice(0, j * basicLeng) + words.slice(-1).join('') + ary[i].slice(j * basicLeng));
-        console.log('5==', r);
-      }
-    }
 
+      for (let j = 0; j < ary.length; j++) {
+        for (let k = 0; k < jLeng; k++) {
+          r.push(ary[j].slice(0, k * basicLeng) + words[i] + ary[j].slice(k * basicLeng));
+        }
+      }
+    }
   }
-  console.log('--end', [...new Set(r)]);
-  console.log('---------------------');
   return [...new Set(r)];
 }
 
-testFn(findSubstring, "解法 1");
+// console.log(findSubstring("pjzkrkevzztxductzzxmxsvwjkxpvukmfjywwetvfnujhweiybwvvsrfequzkhossmootkmyxgjgfordrpapjuunmqnxxdrqrfgkrsjqbszgiqlcfnrpjlcwdrvbumtotzylshdvccdmsqoadfrpsvnwpizlwszrtyclhgilklydbmfhuywotjmktnwrfvizvnmfvvqfiokkdprznnnjycttprkxpuykhmpchiksyucbmtabiqkisgbhxngmhezrrqvayfsxauampdpxtafniiwfvdufhtwajrbkxtjzqjnfocdhekumttuqwovfjrgulhekcpjszyynadxhnttgmnxkduqmmyhzfnjhducesctufqbumxbamalqudeibljgbspeotkgvddcwgxidaiqcvgwykhbysjzlzfbupkqunuqtraxrlptivshhbihtsigtpipguhbhctcvubnhqipncyxfjebdnjyetnlnvmuxhzsdahkrscewabejifmxombiamxvauuitoltyymsarqcuuoezcbqpdaprxmsrickwpgwpsoplhugbikbkotzrtqkscekkgwjycfnvwfgdzogjzjvpcvixnsqsxacfwndzvrwrycwxrcismdhqapoojegggkocyrdtkzmiekhxoppctytvphjynrhtcvxcobxbcjjivtfjiwmduhzjokkbctweqtigwfhzorjlkpuuliaipbtfldinyetoybvugevwvhhhweejogrghllsouipabfafcxnhukcbtmxzshoyyufjhzadhrelweszbfgwpkzlwxkogyogutscvuhcllphshivnoteztpxsaoaacgxyaztuixhunrowzljqfqrahosheukhahhbiaxqzfmmwcjxountkevsvpbzjnilwpoermxrtlfroqoclexxisrdhvfsindffslyekrzwzqkpeocilatftymodgztjgybtyheqgcpwogdcjlnlesefgvimwbxcbzvaibspdjnrpqtyeilkcspknyylbwndvkffmzuriilxagyerjptbgeqgebiaqnvdubrtxibhvakcyotkfonmseszhczapxdlauexehhaireihxsplgdgmxfvaevrbadbwjbdrkfbbjjkgcztkcbwagtcnrtqryuqixtzhaakjlurnumzyovawrcjiwabuwretmdamfkxrgqgcdgbrdbnugzecbgyxxdqmisaqcyjkqrntxqmdrczxbebemcblftxplafnyoxqimkhcykwamvdsxjezkpgdpvopddptdfbprjustquhlazkjfluxrzopqdstulybnqvyknrchbphcarknnhhovweaqawdyxsqsqahkepluypwrzjegqtdoxfgzdkydeoxvrfhxusrujnmjzqrrlxglcmkiykldbiasnhrjbjekystzilrwkzhontwmehrfsrzfaqrbbxncphbzuuxeteshyrveamjsfiaharkcqxefghgceeixkdgkuboupxnwhnfigpkwnqdvzlydpidcljmflbccarbiegsmweklwngvygbqpescpeichmfidgsjmkvkofvkuehsmkkbocgejoiqcnafvuokelwuqsgkyoekaroptuvekfvmtxtqshcwsztkrzwrpabqrrhnlerxjojemcxel", ["dhvf", "sind", "ffsl", "yekr", "zwzq", "kpeo", "cila", "tfty", "modg", "ztjg", "ybty", "heqg", "cpwo", "gdcj", "lnle", "sefg", "vimw", "bxcb"], [0, 1, 2]));
+console.log(comb(["dhvf", "sind", "ffsl", "yekr", "zwzq", "kpeo", "cila", "tfty", "modg", "ztjg", "ybty", "heqg", "cpwo", "gdcj", "lnle", "sefg", "vimw", "bxcb"]));
+// testFn(findSubstring, "解法 1");
