@@ -25,8 +25,7 @@
 */
 /**
 解法 1
-  282ms, 5.08%
-  0MB, 100%
+  264ms, 10%
 
 思路
 
@@ -44,8 +43,7 @@ SELECT MAX(salary) AS SecondHighestSalary
 
 /**
 解法 2
-  282ms, 5.08%
-  0MB, 100%
+  244ms, 19%
 
 思路
   之前不知道 limit，知道后就简单了，一次排序，输出第二行...对 null 处理不对

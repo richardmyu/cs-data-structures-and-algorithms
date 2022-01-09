@@ -40,7 +40,6 @@ FirstName, LastName, City, State
 /**
 解法 1
   432ms, 37.47%
-  0MB, 100%
 
 思路
   无论 person 是否有地址信息，都要有 FirstName, LastName, City, State
