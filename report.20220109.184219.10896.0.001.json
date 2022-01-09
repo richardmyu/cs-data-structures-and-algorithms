@@ -1,0 +1,457 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20220109.184219.10896.0.001.json",
+    "dumpEventTime": "2022-01-09T18:42:19Z",
+    "dumpEventTimeStamp": "1641724939778",
+    "processId": 10896,
+    "cwd": "c:\\mywork\\hubproject\\leetcode-practice",
+    "commandLine": [
+      "node",
+      "c:\\mywork\\hubproject\\leetcode-practice\\javascript\\string\\030-substring-with-concatenation-of-all-words\\case01.js"
+    ],
+    "nodejsVersion": "v12.13.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.13.0",
+      "v8": "7.7.299.13-node.12",
+      "uv": "1.32.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.39.2",
+      "napi": "5",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019a",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.13.0/node-v12.13.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.13.0/node-v12.13.0.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.13.0/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.22000",
+    "osVersion": "Windows 10 Home China",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "11th Gen Intel(R) Core(TM) i5-11260H @ 2.60GHz",
+        "speed": 2611,
+        "user": 78138468,
+        "nice": 0,
+        "sys": 56136468,
+        "idle": 1094001046,
+        "irq": 19726390
+      },
+      {
+        "model": "11th Gen Intel(R) Core(TM) i5-11260H @ 2.60GHz",
+        "speed": 2611,
+        "user": 68419875,
+        "nice": 0,
+        "sys": 16993890,
+        "idle": 1142862031,
+        "irq": 3666968
+      },
+      {
+        "model": "11th Gen Intel(R) Core(TM) i5-11260H @ 2.60GHz",
+        "speed": 2611,
+        "user": 210436515,
+        "nice": 0,
+        "sys": 20054328,
+        "idle": 997784937,
+        "irq": 678265
+      },
+      {
+        "model": "11th Gen Intel(R) Core(TM) i5-11260H @ 2.60GHz",
+        "speed": 2611,
+        "user": 102015578,
+        "nice": 0,
+        "sys": 16608203,
+        "idle": 1109652015,
+        "irq": 377187
+      },
+      {
+        "model": "11th Gen Intel(R) Core(TM) i5-11260H @ 2.60GHz",
+        "speed": 2611,
+        "user": 200045109,
+        "nice": 0,
+        "sys": 20948140,
+        "idle": 1007282546,
+        "irq": 468890
+      },
+      {
+        "model": "11th Gen Intel(R) Core(TM) i5-11260H @ 2.60GHz",
+        "speed": 2611,
+        "user": 63625515,
+        "nice": 0,
+        "sys": 9072531,
+        "idle": 1155577750,
+        "irq": 359265
+      },
+      {
+        "model": "11th Gen Intel(R) Core(TM) i5-11260H @ 2.60GHz",
+        "speed": 2611,
+        "user": 135835171,
+        "nice": 0,
+        "sys": 15847734,
+        "idle": 1076592890,
+        "irq": 580015
+      },
+      {
+        "model": "11th Gen Intel(R) Core(TM) i5-11260H @ 2.60GHz",
+        "speed": 2611,
+        "user": 59783890,
+        "nice": 0,
+        "sys": 14758843,
+        "idle": 1153733062,
+        "irq": 334109
+      },
+      {
+        "model": "11th Gen Intel(R) Core(TM) i5-11260H @ 2.60GHz",
+        "speed": 2611,
+        "user": 99391203,
+        "nice": 0,
+        "sys": 18045031,
+        "idle": 1110839562,
+        "irq": 536125
+      },
+      {
+        "model": "11th Gen Intel(R) Core(TM) i5-11260H @ 2.60GHz",
+        "speed": 2611,
+        "user": 65753031,
+        "nice": 0,
+        "sys": 7843703,
+        "idle": 1154679046,
+        "irq": 403359
+      },
+      {
+        "model": "11th Gen Intel(R) Core(TM) i5-11260H @ 2.60GHz",
+        "speed": 2611,
+        "user": 108641875,
+        "nice": 0,
+        "sys": 17084968,
+        "idle": 1102548937,
+        "irq": 538625
+      },
+      {
+        "model": "11th Gen Intel(R) Core(TM) i5-11260H @ 2.60GHz",
+        "speed": 2611,
+        "user": 58690765,
+        "nice": 0,
+        "sys": 6956437,
+        "idle": 1162628578,
+        "irq": 277437
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "以太网",
+        "internal": false,
+        "mac": "60:18:95:2d:40:37",
+        "address": "fe80::d9f2:45fc:71a4:dfce",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 12
+      },
+      {
+        "name": "以太网",
+        "internal": false,
+        "mac": "60:18:95:2d:40:37",
+        "address": "192.168.101.102",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "DELL-G15-YM"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff69f141389",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+10873"
+    },
+    {
+      "pc": "0x00007ff69f1457cc",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+28348"
+    },
+    {
+      "pc": "0x00007ff69f144778",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+24168"
+    },
+    {
+      "pc": "0x00007ff69f23332b",
+      "symbol": "v8::base::CPU::has_sse+37723"
+    },
+    {
+      "pc": "0x00007ff69fa36f4e",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff69fa1ef91",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x00007ff69f8ec85c",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff69f8f7c00",
+      "symbol": "v8::internal::Heap::ProtectUnprotectedMemoryChunks+1312"
+    },
+    {
+      "pc": "0x00007ff69f8f4734",
+      "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3204"
+    },
+    {
+      "pc": "0x00007ff69f8e9fc3",
+      "symbol": "v8::internal::Heap::CollectGarbage+1283"
+    },
+    {
+      "pc": "0x00007ff69f8e8794",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2356"
+    },
+    {
+      "pc": "0x00007ff69f909a65",
+      "symbol": "v8::internal::Factory::NewFillerObject+53"
+    },
+    {
+      "pc": "0x00007ff69f676239",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+4057"
+    },
+    {
+      "pc": "0x00007ff69fe62c6d",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+567949"
+    },
+    {
+      "pc": "0x00007ff69fde1fb3",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+40403"
+    },
+    {
+      "pc": "0x000000415ce0bb06",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 1888325632,
+    "totalCommittedMemory": 1888325632,
+    "usedMemory": 1828386544,
+    "availableMemory": 488698280,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 261872,
+        "used": 32296,
+        "available": 229576
+      },
+      "new_space": {
+        "memorySize": 2097152,
+        "committedMemory": 2097152,
+        "capacity": 1047488,
+        "used": 1014992,
+        "available": 32496
+      },
+      "old_space": {
+        "memorySize": 1704046592,
+        "committedMemory": 1704046592,
+        "capacity": 1646486408,
+        "used": 1645813408,
+        "available": 673000
+      },
+      "code_space": {
+        "memorySize": 425984,
+        "committedMemory": 425984,
+        "capacity": 165696,
+        "used": 165696,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 266240,
+        "committedMemory": 266240,
+        "capacity": 180000,
+        "used": 180000,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 181178368,
+        "committedMemory": 181178368,
+        "capacity": 181176600,
+        "used": 181176600,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 49152,
+        "committedMemory": 49152,
+        "capacity": 3552,
+        "used": 3552,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 178273544,
+        "used": 0,
+        "available": 178273544
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 196.39,
+    "kernelCpuSeconds": 6.812,
+    "cpuConsumptionPercent": 233.566,
+    "maxRss": 2448789504,
+    "pageFaults": {
+      "IORequired": 3272056,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 2,
+      "writes": 111
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "": "C:=c:\\mywork\\hubproject\\leetcode-practice",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\yum\\AppData\\Roaming",
+    "APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL": "true",
+    "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_9248_IXRVNRGMKPRBOZXL",
+    "COLUMNS": "86",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "DELL-G15-YM",
+    "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "ELECTRON_NO_ATTACH_CONSOLE": "1",
+    "ELECTRON_RUN_AS_NODE": "1",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\yum",
+    "LOCALAPPDATA": "C:\\Users\\yum\\AppData\\Local",
+    "LOGONSERVER": "\\\\DELL-G15-YM",
+    "NUMBER_OF_PROCESSORS": "12",
+    "OneDrive": "C:\\Users\\yum\\OneDrive",
+    "OneDriveConsumer": "C:\\Users\\yum\\OneDrive",
+    "ORIGINAL_XDG_CURRENT_DESKTOP": "undefined",
+    "OS": "Windows_NT",
+    "Path": "C:\\Program Files\\PowerShell\\7;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\PowerShell\\7-preview\\preview;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\mingw-w64\\x86_64-8.1.0-win32-seh-rt_v6-rev0\\mingw64\\bin;C:\\Program Files\\PowerShell\\7\\;C:\\Users\\yum\\scoop\\shims;C:\\Users\\yum\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\;C:\\Users\\yum\\AppData\\Local\\Programs\\Python\\Python38\\;C:\\Users\\yum\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\yum\\AppData\\Roaming\\npm;C:\\Users\\yum\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm Community Edition 2020.3.3\\bin;C:\\Users\\yum\\AppData\\Local\\Pandoc\\",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+    "POWERSHELL_DISTRIBUTION_CHANNEL": "MSI:Windows 10 Home China",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "8d01",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "PSModulePath": "C:\\Users\\yum\\Documents\\PowerShell\\Modules;C:\\Program Files\\PowerShell\\Modules;c:\\program files\\powershell\\7\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "PUBLIC": "C:\\Users\\Public",
+    "PyCharm Community Edition": "C:\\Program Files\\JetBrains\\PyCharm Community Edition 2020.3.3\\bin;",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\WINDOWS",
+    "TEMP": "C:\\Users\\yum\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\yum\\AppData\\Local\\Temp",
+    "USERDOMAIN": "DELL-G15-YM",
+    "USERDOMAIN_ROAMINGPROFILE": "DELL-G15-YM",
+    "USERNAME": "yum",
+    "USERPROFILE": "C:\\Users\\yum",
+    "VSCODE_AMD_ENTRYPOINT": "vs/workbench/services/extensions/node/extensionHostProcess",
+    "VSCODE_CLI": "1",
+    "VSCODE_CODE_CACHE_PATH": "C:\\Users\\yum\\AppData\\Roaming\\Code\\CachedData\\899d46d82c4c95423fb7e10e68eba52050e30ba3",
+    "VSCODE_CWD": "C:\\mywork\\hubproject\\leetcode-practice",
+    "VSCODE_HANDLES_UNCAUGHT_ERRORS": "true",
+    "VSCODE_IPC_HOOK": "\\\\.\\pipe\\e3194279ebfa6ccf0bb4766f7f6ff675-1.63.2-main-sock",
+    "VSCODE_IPC_HOOK_EXTHOST": "\\\\.\\pipe\\vscode-ipc-346cb228-9f12-41c5-b2b4-057ad7f2857b-sock",
+    "VSCODE_LOG_NATIVE": "false",
+    "VSCODE_LOG_STACK": "false",
+    "VSCODE_NLS_CONFIG": "{\"locale\":\"zh-cn\",\"availableLanguages\":{},\"_languagePackSupport\":true}",
+    "VSCODE_PID": "9248",
+    "VSCODE_PIPE_LOGGING": "true",
+    "VSCODE_VERBOSE_LOGGING": "true",
+    "windir": "C:\\WINDOWS",
+    "WSLENV": "WT_SESSION::WT_PROFILE_ID",
+    "WT_PROFILE_ID": "{a3a2e83a-884a-5379-baa8-16f193a13b21}",
+    "WT_SESSION": "df8fe59a-ff4c-423d-834d-b99534753af0",
+    "ZES_ENABLE_SYSMAN": "1"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\SYSTEM32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\powrprof.dll",
+    "C:\\WINDOWS\\SYSTEM32\\UMPDC.dll",
+    "C:\\WINDOWS\\system32\\uxtheme.dll",
+    "C:\\WINDOWS\\System32\\combase.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+    "C:\\WINDOWS\\System32\\bcryptprimitives.dll",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll",
+    "C:\\WINDOWS\\system32\\wshbth.dll",
+    "C:\\WINDOWS\\system32\\nlansp_c.dll"
+  ]
+}

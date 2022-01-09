@@ -4,7 +4,7 @@ const testFn = require("./test");
 解法 1
 
 思路
-  鉴于 case01 中全匹配带来的内存溢出问题，放弃全组合匹配的想法
+  获取匹配索引后，对索引进行比较分析
 
 小结
  */
@@ -14,50 +14,72 @@ const testFn = require("./test");
  * @param {string[]} words
  * @return {number[]}
  */
+// TODO: sorry, 还是内存溢出
 const findSubstring = function (s, words) {
   let leng = words.length;
   let basicLeng = words[0].length;
   let r = [];
   let obj = {};
-  let temp = [];
 
   // 捕获所有匹配项索引
   for (let i = 0; i < leng; i++) {
     let flag;
     let nextIndex = -1;
-    obj[words[i]] = []
+    obj[words[i] + i] = []
     while ((flag = s.indexOf(words[i], nextIndex + 1)) !== -1) {
       nextIndex = flag;
-      obj[words[i]].push(flag);
+      obj[words[i] + i].push(flag);
     }
   }
-  console.log('obj: ', obj);
 
-  let valueList = Object.values(obj);
-
-  let valLeng = valueList[0].length;
-  temp = Array.from({ length: valLeng }, () => []);
-
+  let valueList = comb(Object.values(obj));
+  // console.log('valueList', valueList);
   for (let i = 0; i < valueList.length; i++) {
-    if (valueList[i].length !== valueList[0].length) {
-      return r;
-    }
-    for (let j = 0; j < valLeng; j++) {
-      temp[j].push(valueList[i][j]);
+    if (valueList[i].every((item, index) => item === (valueList[i][0] + basicLeng * index))) {
+      r.push(valueList[i][0]);
     }
   }
-  console.log('temp: ', temp);
-
-  for (let i = 0; i < temp.length; i++) {
-    let l = temp[i].sort((a, b) => a - b);
-    if (l.every((item, index) => (item - basicLeng * index) === l[0])) {
-      r.push(l[0]);
-    }
-  }
-  console.log('r: ', r);
-
-
-  return r;
+  r = [...new Set(r)];
+  // console.log(r);
+  return r.sort((a, b) => a - b);
 };
 
-testFn(findSubstring, "解法 1");
+const comb = function (diList) {
+  let r = [];
+  let leng = diList.length;
+  if (leng === 0 || leng === 1) {
+    r = diList;
+    return r;
+  }
+  if (leng === 2) {
+    for (let i = 0; i < diList[0].length; i++) {
+      for (let j = 0; j < diList[1].length; j++) {
+        let ary = [];
+        ary.push(diList[0][i]);
+        ary.push(diList[1][j]);
+        ary.sort((a, b) => a - b)
+        r.push(ary);
+      }
+    }
+  }
+  if (leng > 2) {
+    ary = comb(diList.slice(1));
+    for (let i = 0; i < ary.length; i++) {
+      for (let j = 0; j < diList[0].length; j++) {
+        let l = [];
+        l.push(...ary[i]);
+        l.push(diList[0][j]);
+        l.sort((a, b) => a - b)
+        r.push(l);
+      }
+    }
+
+  }
+  return r;
+}
+
+// comb([[7, 2, 3], [4, 5]]);
+// comb([[1, 2, 3], [4, 5], [6]]);
+// comb([[1, 2, 3], [4, 5], [6]]);
+findSubstring("bcabbcaabbccacacbabccacaababcbb", ["c", "b", "a", "c", "a", "a", "a", "b", "c"]);
+// testFn(findSubstring, "解法 2");
