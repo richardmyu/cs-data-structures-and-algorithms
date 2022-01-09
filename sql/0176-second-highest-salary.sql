@@ -35,6 +35,7 @@
 
 小结
   1.使用了双循环，时间复杂度比较大；
+  2.针对 N 高情况，无法应对；
  */
 SELECT MAX(salary) AS SecondHighestSalary
   FROM Employee
@@ -59,10 +60,7 @@ SELECT salary AS SecondHighestSalary
   LIMIT 1 OFFSET 1;
 
 -- MySQL
--- SELECT (CASE WHEN salary IS NOT NULL THEN salary ELSE NULL END) AS SecondHighestSalary
---   FROM (SELECT salary FROM Employee ORDER BY salary DESC LIMIT 1, 1) AS OrderEmployee;
-
 SELECT ifNull((SELECT DISTINCT Salary
                  FROM Employee
-                ORDER BY Salary DESC LINIT 1,1), NULL)
+                ORDER BY Salary DESC LIMIT 1,1), NULL)
         AS SecondHighestSalary;
