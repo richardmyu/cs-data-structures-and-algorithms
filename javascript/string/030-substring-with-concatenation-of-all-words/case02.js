@@ -1,7 +1,7 @@
 const testFn = require("./test");
 
 /**
-解法 1
+解法 2
 
 思路
   获取匹配索引后，对索引进行比较分析
