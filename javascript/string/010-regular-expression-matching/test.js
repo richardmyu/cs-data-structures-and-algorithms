@@ -33,12 +33,12 @@ const testFn = (fn, msg) => {
 
   // assert.deepStrictEqual(fn("aa", "a*."), true);
   // assert.deepStrictEqual(fn("missssisssspp", "mis*is*p*."), true);
-  assert.deepStrictEqual(fn("aabb", "a*ba*bb"), false);
+  assert.deepStrictEqual(fn('aabb', 'a*ba*bb'), false);
   // assert.deepStrictEqual(fn("aab", "a*b*a*c"), false);
   // assert.deepStrictEqual(fn("aabb", "a*b*a*b"), false);
 
-  console.log("all cases pass the test");
-  console.log("--- END ---");
-}
+  console.log('all cases pass the test');
+  console.log('--- END ---');
+};
 
 module.exports = testFn;

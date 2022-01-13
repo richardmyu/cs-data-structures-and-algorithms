@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 1
@@ -31,4 +31,4 @@ const longestCommonPrefix = function (strs) {
   return str;
 };
 
-testFn(longestCommonPrefix, "解法 1");
+testFn(longestCommonPrefix, '解法 1');

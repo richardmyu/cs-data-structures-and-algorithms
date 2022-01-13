@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 1
@@ -62,4 +62,4 @@ const letterCombinations = function (digits) {
   return result;
 };
 
-testFn(letterCombinations, "解法 1");
+testFn(letterCombinations, '解法 1');

@@ -1,0 +1,24 @@
+{
+  "name": "leetcode-practice",
+  "version": "1.0.0",
+  "description": "LeetCode 练习集",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint javascript/**/*.js",
+    "lint:fix": "eslint --fix javascript/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardmyu/leetcode-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richardmyu/leetcode-practice/issues"
+  },
+  "homepage": "https://github.com/richardmyu/leetcode-practice#readme",
+  "devDependencies": {
+    "eslint": "^8.6.0"
+  }
+}

@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 1
@@ -55,4 +55,4 @@ const countAndSay = function (n) {
   return str;
 };
 
-testFn(countAndSay, "解法 1");
+testFn(countAndSay, '解法 1');

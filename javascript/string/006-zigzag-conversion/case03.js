@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 2
@@ -57,8 +57,8 @@ var convert = function (s, numRows) {
   if (numRows <= 1) {
     return s;
   }
-  let leng = s.length;
-  let step = 2 * numRows - 2;
+  // let leng = s.length;
+  // let step = 2 * numRows - 2;
   let str = '';
 
   // for (let i = 0; i < leng; i++) {

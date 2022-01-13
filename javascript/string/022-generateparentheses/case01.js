@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 1
@@ -46,4 +46,4 @@ const generateParenthesis = function (n) {
 // generateParenthesis(2);
 // generateParenthesis(3);
 
-testFn(generateParenthesis, "解法 1");
+testFn(generateParenthesis, '解法 1');

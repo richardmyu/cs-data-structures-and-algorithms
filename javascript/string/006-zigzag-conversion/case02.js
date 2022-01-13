@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 2
@@ -27,19 +27,19 @@ var convert = function (s, numRows) {
   let step = 2 * numRows - 2;
 
   for (let j = 0; j < numRows; j++) {
-    ary[j] = "";
+    ary[j] = '';
     for (let i = 1; i <= leng; i++) {
       if (j < 1) {
-        ary[j] += ((i % step) === (j + 1)) ? s[i - 1] : "";
+        ary[j] += ((i % step) === (j + 1)) ? s[i - 1] : '';
       } else if (j === 1) {
-        ary[j] += (i % step === (j + 1) || i % step === 0) ? s[i - 1] : "";
+        ary[j] += (i % step === (j + 1) || i % step === 0) ? s[i - 1] : '';
       } else {
-        ary[j] += (i % step === (j + 1) || i % step === (step + 1 - j)) ? s[i - 1] : "";
+        ary[j] += (i % step === (j + 1) || i % step === (step + 1 - j)) ? s[i - 1] : '';
       }
     }
   }
 
-  return ary.flat().join("");
+  return ary.flat().join('');
 };
 
 testFn(convert, '解法 2');

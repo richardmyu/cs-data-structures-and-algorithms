@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 2
@@ -19,7 +19,7 @@ const testFn = require("./test");
 var myAtoi = function (s) {
   const MINNUM = Math.pow(2, 31) * -1;
   const MAXNUM = Math.pow(2, 31) - 1;
-  s = s.replace(/^ +/g, "").match(/(^[+-]?\d+[.]\d{0,}|^[+-.]?\d+)/);
+  s = s.replace(/^ +/g, '').match(/(^[+-]?\d+[.]\d{0,}|^[+-.]?\d+)/);
   if (s) {
     if (s[0] < MINNUM) {
       return MINNUM;
@@ -33,4 +33,4 @@ var myAtoi = function (s) {
   }
 };
 
-testFn(myAtoi, '解法 2')
+testFn(myAtoi, '解法 2');

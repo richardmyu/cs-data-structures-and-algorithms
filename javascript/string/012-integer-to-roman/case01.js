@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 1
@@ -43,14 +43,14 @@ const intToRoman = function (num) {
     900: 'CM',
     1000: 'M'
   };
-  if (!!a) {
+  if (a) {
     if (switchChar.hasOwnProperty(a * 1000)) {
       s += switchChar[a * 1000 + ''];
     } else {
       s += switchChar['1000'].repeat(a);
     }
   }
-  if (!!b) {
+  if (b) {
     if (switchChar.hasOwnProperty(b * 100)) {
       s += switchChar[b * 100 + ''];
     } else {
@@ -61,7 +61,7 @@ const intToRoman = function (num) {
       }
     }
   }
-  if (!!c) {
+  if (c) {
     if (switchChar.hasOwnProperty(c * 10)) {
       s += switchChar[c * 10 + ''];
     } else {
@@ -72,7 +72,7 @@ const intToRoman = function (num) {
       }
     }
   }
-  if (!!d) {
+  if (d) {
     if (switchChar.hasOwnProperty(d)) {
       s += switchChar[d + ''];
     } else {
@@ -86,4 +86,4 @@ const intToRoman = function (num) {
   return s;
 };
 
-testFn(intToRoman, "解法 1");
+testFn(intToRoman, '解法 1');

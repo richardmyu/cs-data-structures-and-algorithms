@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 2
@@ -25,7 +25,7 @@ const findSubstring = function (s, words) {
   for (let i = 0; i < leng; i++) {
     let flag;
     let nextIndex = -1;
-    obj[words[i] + i] = []
+    obj[words[i] + i] = [];
     while ((flag = s.indexOf(words[i], nextIndex + 1)) !== -1) {
       nextIndex = flag;
       obj[words[i] + i].push(flag);
@@ -57,29 +57,29 @@ const comb = function (diList) {
         let ary = [];
         ary.push(diList[0][i]);
         ary.push(diList[1][j]);
-        ary.sort((a, b) => a - b)
+        ary.sort((a, b) => a - b);
         r.push(ary);
       }
     }
   }
   if (leng > 2) {
-    ary = comb(diList.slice(1));
+    let ary = comb(diList.slice(1));
     for (let i = 0; i < ary.length; i++) {
       for (let j = 0; j < diList[0].length; j++) {
         let l = [];
         l.push(...ary[i]);
         l.push(diList[0][j]);
-        l.sort((a, b) => a - b)
+        l.sort((a, b) => a - b);
         r.push(l);
       }
     }
 
   }
   return r;
-}
+};
 
 // comb([[7, 2, 3], [4, 5]]);
 // comb([[1, 2, 3], [4, 5], [6]]);
 // comb([[1, 2, 3], [4, 5], [6]]);
-findSubstring("bcabbcaabbccacacbabccacaababcbb", ["c", "b", "a", "c", "a", "a", "a", "b", "c"]);
-// testFn(findSubstring, "解法 2");
+findSubstring('bcabbcaabbccacacbabccacaababcbb', ['c', 'b', 'a', 'c', 'a', 'a', 'a', 'b', 'c']);
+testFn(findSubstring, '解法 2');

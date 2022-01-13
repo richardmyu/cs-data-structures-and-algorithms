@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 1
@@ -37,4 +37,4 @@ const multiply = function (num1, num2) {
   return num.toString();
 };
 
-testFn(multiply, "解法 1");
+testFn(multiply, '解法 1');

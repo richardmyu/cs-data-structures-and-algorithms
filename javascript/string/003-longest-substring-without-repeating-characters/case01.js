@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 1
@@ -42,4 +42,4 @@ var lengthOfLongestSubstring = function (s) {
   return str ? str.length : s.length;
 };
 
-testFn(lengthOfLongestSubstring,"解法 1");
+testFn(lengthOfLongestSubstring,'解法 1');

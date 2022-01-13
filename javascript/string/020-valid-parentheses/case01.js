@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 1
@@ -38,4 +38,4 @@ const isValid = function (s) {
   return s.length === 0;
 };
 
-testFn(isValid, "解法 1");
+testFn(isValid, '解法 1');

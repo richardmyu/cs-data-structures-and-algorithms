@@ -1,5 +1,5 @@
-const isPalindromeStr = require("./tool");
-const { longP } = require("./test");
+const isPalindromeStr = require('./tool');
+const { longP } = require('./test');
 
 /**
 解法 1
@@ -23,7 +23,7 @@ const { longP } = require("./test");
 var longestPalindrome = function (s) {
   let leng = s.length;
   let lastIndex = 0;
-  let str = "";
+  let str = '';
 
   for (let i = 0; i < leng; i++) {
     lastIndex = s.lastIndexOf(s[i]);
@@ -57,4 +57,4 @@ var longestPalindrome = function (s) {
   return str;
 };
 
-longP(longestPalindrome, "解法 1");
+longP(longestPalindrome, '解法 1');

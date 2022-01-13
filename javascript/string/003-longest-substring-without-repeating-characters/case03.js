@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 3(2 的改进版)
@@ -38,4 +38,4 @@ var lengthOfLongestSubstring = function (s) {
   return subLeng;
 };
 
-testFn(lengthOfLongestSubstring,"解法 3");
+testFn(lengthOfLongestSubstring,'解法 3');

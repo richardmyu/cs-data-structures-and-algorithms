@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 1
@@ -16,4 +16,4 @@ const fn = function (s) {
 
 };
 
-testFn(fn,"解法 1");
+testFn(fn,'解法 1');

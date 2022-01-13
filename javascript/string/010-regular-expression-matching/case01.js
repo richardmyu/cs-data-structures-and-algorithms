@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 1
@@ -57,7 +57,7 @@ var isMatch = function (s, p) {
         // 不完全匹配 1.字符多余
         if ((j + 1) === pLeng && (i + 1) < sLeng) {
           console.log('  111-1', `s[${i}]=${s[i]}`, `p[${j}]=${p[j]}`);
-          if (p.slice(-1) === "*") {
+          if (p.slice(-1) === '*') {
             if (p.slice(-2, -1) === '.') {
               // (1) `.*` 模式
               return true;
@@ -121,4 +121,4 @@ var isMatch = function (s, p) {
   return true;
 };
 
-testFn(isMatch, '解法 1')
+testFn(isMatch, '解法 1');

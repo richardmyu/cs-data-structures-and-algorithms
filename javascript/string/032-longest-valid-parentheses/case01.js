@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 1
@@ -16,4 +16,4 @@ const longestValidParentheses = function (s) {
 
 };
 
-testFn(longestValidParentheses,"解法 1");
+testFn(longestValidParentheses,'解法 1');

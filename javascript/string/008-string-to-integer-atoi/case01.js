@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 1
@@ -35,8 +35,8 @@ var myAtoi = function (s) {
     for (let z of ['+', '-', '.']) {
       // 单个符号出现多个，
       if (substr.indexOf(j) !== substr.lastIndexOf(j)) {
-        secdotIndex = substr.slice(substr.indexOf(j) + 1).indexOf(j) + substr.indexOf(j) + 1;
-        substr = substr.slice(0, secdotIndex)
+        let secdotIndex = substr.slice(substr.indexOf(j) + 1).indexOf(j) + substr.indexOf(j) + 1;
+        substr = substr.slice(0, secdotIndex);
       }
       // + - 出现在非首位
       if (j !== '.' && substr[0] !== j && substr.includes(j)) {
@@ -56,4 +56,4 @@ var myAtoi = function (s) {
   // return Number(substr) > MAXNUM ? MAXNUM : Number(substr) < MINNUM ? MINNUM : Number(substr);
 };
 
-testFn(myAtoi, '解法 1')
+testFn(myAtoi, '解法 1');

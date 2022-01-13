@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 1
@@ -57,7 +57,7 @@ var convert = function (s, numRows) {
     }
   }
 
-  return ary.flat(2).join("");
+  return ary.flat(2).join('');
 };
 
 testFn(convert, '解法 1');

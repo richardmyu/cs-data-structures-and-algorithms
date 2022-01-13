@@ -1,4 +1,4 @@
-const testFn = require("./test");
+const testFn = require('./test');
 
 /**
 解法 1
@@ -48,4 +48,4 @@ const strStr = function (haystack, needle) {
   return flag ? index : -1;
 };
 
-testFn(strStr, "解法 1");
+testFn(strStr, '解法 1');

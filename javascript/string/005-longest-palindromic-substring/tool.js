@@ -33,6 +33,6 @@ const isPalindromeStr = function (s) {
     }
   }
   return true;
-}
+};
 
 module.exports = isPalindromeStr;
