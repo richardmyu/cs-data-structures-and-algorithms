@@ -20,5 +20,14 @@
   "homepage": "https://github.com/richardmyu/leetcode-practice#readme",
   "devDependencies": {
     "eslint": "^8.6.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint javascript/**/*.js",
+      "git add"
+    ]
   }
 }
