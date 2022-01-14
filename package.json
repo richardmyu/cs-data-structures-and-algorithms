@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint javascript/**/*.js",
     "lint:fix": "eslint --fix javascript/**/*.js",
-    "prepare" : "husky install"
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
   "homepage": "https://github.com/richardmyu/leetcode-practice#readme",
   "devDependencies": {
     "eslint": "^8.6.0",
-    "husky": "^7.0.4"
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.7"
   },
   "husky": {
     "hooks": {
