@@ -24,8 +24,8 @@ const testFn = require('./test');
 * @param {string} p
 * @return {boolean}
 */
-var isMatch = function (s, p) {
-  var sLeng = s.length,
+const isMatch = function (s, p) {
+  let sLeng = s.length,
     pLeng = p.length,
     pIndex = 0,
     sIndex = 0;

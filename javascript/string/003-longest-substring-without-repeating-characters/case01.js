@@ -17,11 +17,11 @@ const testFn = require('./test');
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = function (s) {
-  var ary = [];
-  var str = '';
-  for (var i = 0; i < s.length; i++) {
-    for (var j = i + 1; j < s.length; j++) {
+const lengthOfLongestSubstring = function (s) {
+  let ary = [];
+  let str = '';
+  for (let i = 0; i < s.length; i++) {
+    for (let j = i + 1; j < s.length; j++) {
       str = s.slice(i, j);
       if (str.includes(s[j])) {
         ary[i] = s.slice(i, j);

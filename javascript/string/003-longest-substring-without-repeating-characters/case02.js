@@ -17,7 +17,7 @@ const testFn = require('./test');
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = function (s) {
+const lengthOfLongestSubstring = function (s) {
   let str = '';
   let ary = [];
   let leng = s.length;

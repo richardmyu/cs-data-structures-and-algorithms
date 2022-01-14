@@ -16,7 +16,7 @@ const testFn = require('./test');
  * @param {sing} s
  * @return {number}
  */
-var myAtoi = function (s) {
+const myAtoi = function (s) {
   const MINNUM = Math.pow(2, 31) * -1;
   const MAXNUM = Math.pow(2, 31) - 1;
   s = s.replace(/^ +/g, '').match(/(^[+-]?\d+[.]\d{0,}|^[+-.]?\d+)/);

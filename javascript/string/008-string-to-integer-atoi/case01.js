@@ -15,7 +15,7 @@ const testFn = require('./test');
  * @param {string} s
  * @return {number}
  */
-var myAtoi = function (s) {
+const myAtoi = function (s) {
   const MINNUM = (-2) ** 31;
   const MAXNUM = 2 ** 31 - 1;
   let str = s.trim(),

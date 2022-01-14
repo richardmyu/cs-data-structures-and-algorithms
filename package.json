@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/richardmyu/leetcode-practice#readme",
   "devDependencies": {
-    "eslint": "^8.6.0"
+    "eslint": "^8.6.0",
+    "husky": "^7.0.4"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"

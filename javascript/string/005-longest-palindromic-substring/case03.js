@@ -15,7 +15,7 @@ const { longP } = require('./test');
  * @param {string} s
  * @return {string}
  */
-var longestPalindrome = function (s) {
+const longestPalindrome = function (s) {
 
 };
 
