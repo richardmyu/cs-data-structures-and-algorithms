@@ -13,8 +13,12 @@
     "type": "git",
     "url": "git+https://github.com/richardmyu/leetcode-practice.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "algorithms",
+    "javascript",
+    "python"
+  ],
+  "author": "yum",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/richardmyu/leetcode-practice/issues"
