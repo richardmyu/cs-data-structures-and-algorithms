@@ -7,9 +7,10 @@ const testFn = require('./test');
   分组（小于 14位）相乘，依次拼接
 
 小结
-  分支太多，容易遗漏
+  分支太多，容易遗漏；
  */
 
+// TODO: obsoleted
 /**
  * @param {string} num1
  * @param {string} num2
@@ -98,8 +99,8 @@ const multiply = function (num1, num2) {
     }
 
 
-    console.log('--max', max_num_ary);
-    console.log('--min', min_num_ary);
+    // console.log('--max', max_num_ary);
+    // console.log('--min', min_num_ary);
     // 累乘
     for (let i = max_num_ary.length - 1; i >= 0; i--) {
       for (let j = max_num_ary[i].length - 1; j >= 0; j--) {
@@ -118,7 +119,7 @@ const multiply = function (num1, num2) {
         }
       }
     }
-    console.log('--r', r);
+    // console.log('--r', r);
 
     // 累加
     for (let l = 0; l < r.length; l++) {
