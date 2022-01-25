@@ -2,6 +2,8 @@ const testFn = require('./test');
 
 /**
 解法 1
+  60ms, 96.44%
+  41MB, 5.06%
 
 思路
 
@@ -9,11 +11,11 @@ const testFn = require('./test');
  */
 
 /**
- * @param {}
- * @return {}
+ * @param {string} s
+ * @return {number}
  */
-const fn = function (s) {
-
+const lengthOfLastWord = function (s) {
+  return s.trim().split(' ').slice(-1).toString().length;
 };
 
-testFn(fn,'解法 1');
+testFn(lengthOfLastWord, '解法 1');
