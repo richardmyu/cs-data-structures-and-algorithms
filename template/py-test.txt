@@ -7,9 +7,9 @@ import unittest
 class LongestSubstringTestCase(unittest.TestCase):
     """测试 longest_substring.py"""
 
-    def test_longest_substring(self):
-        print('nothing')
-        self.assertEqual(length_of_longest_substring("bbbb"), 1)
+    # def test_longest_substring(self):
+    #     print('nothing')
+    #     self.assertEqual(length_of_longest_substring("bbbb"), 1)
 
 
 if __name__ == '__main__':
