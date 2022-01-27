@@ -1,7 +1,10 @@
+# default
 .vscode
 .idea
 node_modules/
 
+# py
 **/__pycache__/
 
+# node bug log
 report.*.json
