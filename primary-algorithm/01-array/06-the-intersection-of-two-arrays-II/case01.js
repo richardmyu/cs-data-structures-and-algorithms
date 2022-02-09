@@ -29,17 +29,19 @@ const intersect = function (nums1, nums2) {
   }
 
   for (let i = 0; i < min_num.length; i++) {
-    if (min_num.indexOf(min_num[i]) === min_num.lastIndexOf(min_num[i])) {
-      if (max_num.includes(min_num[i])) {
+    if (max_num.includes(min_num[i])) {
+
+      if (min_num.indexOf(min_num[i]) === min_num.lastIndexOf(min_num[i])) {
+        // 存在且唯一
         r.push(min_num[i]);
-      }
-    } else {
-      if (max_num.includes(min_num[i])) {
+      } else {
+        // 存在且不唯一
         let exec_max_num = acountChar(min_num[i], max_num);
         let exec_min_num = acountChar(min_num[i], min_num);
         let flag = exec_max_num.length < exec_min_num.length ? exec_max_num : exec_min_num;
         r.push(...flag);
-        i += flag.length;
+        min_num = min_num.filter(item => item !== min_num[i]);
+
       }
     }
   }
@@ -51,11 +53,7 @@ const acountChar = function (s, ary) {
     return;
   }
   let r = [];
-  for (let i = 0; i < ary.length; i++) {
-    if (ary[i] === s) {
-      r.push(s);
-    }
-  }
+  r = ary.filter(item => item === s);
   return r;
 };
 
