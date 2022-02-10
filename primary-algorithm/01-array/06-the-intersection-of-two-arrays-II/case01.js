@@ -2,6 +2,8 @@ const testFn = require('./test');
 
 /**
 解法 1
+  76ms, 63.89%
+  44.8MB, 5.02%
 
 思路
 
@@ -30,7 +32,6 @@ const intersect = function (nums1, nums2) {
 
   for (let i = 0; i < min_num.length; i++) {
     if (max_num.includes(min_num[i])) {
-
       if (min_num.indexOf(min_num[i]) === min_num.lastIndexOf(min_num[i])) {
         // 存在且唯一
         r.push(min_num[i]);
@@ -41,7 +42,7 @@ const intersect = function (nums1, nums2) {
         let flag = exec_max_num.length < exec_min_num.length ? exec_max_num : exec_min_num;
         r.push(...flag);
         min_num = min_num.filter(item => item !== min_num[i]);
-
+        i--;
       }
     }
   }
