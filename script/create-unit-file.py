@@ -74,7 +74,7 @@ def read_template():
 def create_file():
     """生成指定语言类型文件
     """
-    print("--- creating problems files -- start ---")
+    print("--- creating problems files ---")
 
     # 获取模板
     case_txt, test_txt = read_template()
@@ -90,6 +90,8 @@ def create_file():
         f_test = open(test_file, 'w')
         f_test.write(test_txt)
         f_test.close()
+
+    print("--- end ---")
 
 
 if __name__ == '__main__':
