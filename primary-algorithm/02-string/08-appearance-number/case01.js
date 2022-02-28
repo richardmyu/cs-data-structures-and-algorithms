@@ -29,7 +29,6 @@ const countAndSay = function (n) {
         while (j < r.length && r[i] === r[j]) {
           j++;
         }
-        console.log(j);
         s += (j - i) + r[i];
         i = j - 1;
       } else {
