@@ -19,13 +19,14 @@ const deleteNode = function (node) {
   node.next = node.next.next;
 };
 
-// Definition for singly-linked list.
+// mock function
 const LinkedList = function () {
 
-  let ListNode = function (val) {
+  const ListNode = function (val) {
     this.val = val;
     this.next = null;
   }
+
   let length = 0;
   let head = null;
 
@@ -46,24 +47,24 @@ const LinkedList = function () {
   this.print = function () {
     let s = '';
     let current = head;
-    while (current.next) {
-      s += current.val + (current.next ? ',' : '')
+    while (current) {
+      s += current.val + (current.next ? ',' : '');
+      current = current.next;
     }
     return s;
   }
 
-  this.delete = function (node) {
-    let localNode;
+  this.delete = function (val) {
     let current = head;
-    while (current.next) {
-      if (current.val === node) {
-        localNode = current;
+    while (current) {
+      if (current.val === val) {
+        current.val = current.next.val;
+        current.next = current.next.next;
       }
+      current = current.next;
     }
-    localNode.val = localNode.next.val;
-    localNode.next = localNode.next.next;
 
-    return this.print().split('');
+    return this.print().split(',').map(item => Number(item));
   }
 }
 
@@ -72,7 +73,6 @@ const getLinkedList = function (list, node) {
   list.forEach(item => {
     link.append(item)
   });
-  console.log(link.print(), node);
   return link.delete(node);
 }
 
