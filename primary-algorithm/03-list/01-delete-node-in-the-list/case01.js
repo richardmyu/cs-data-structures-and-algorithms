@@ -11,8 +11,8 @@ const testFn = require('./test');
  */
 
 /**
-@param {ListNode} node
-@return {void} Do not return anything, modify node in-place instead.
+ * @param {ListNode} node
+ * @return {void} Do not return anything, modify node in-place instead.
  */
 const deleteNode = function (node) {
   node.val = node.next.val;
