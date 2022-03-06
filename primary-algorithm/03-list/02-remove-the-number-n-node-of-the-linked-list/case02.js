@@ -2,8 +2,6 @@ const testFn = require('./test');
 
 /**
 解法 1
-  64ms, 94.18%
-  43MB, 32.33%
 
 思路
 
@@ -11,20 +9,23 @@ const testFn = require('./test');
  */
 
 /**
- * @param {ListNode} node
- * @return {void} Do not return anything, modify node in-place instead.
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
  */
-const deleteNode = function (node) {
-  node.val = node.next.val;
-  node.next = node.next.next;
+const removeNthFromEnd = function (head, n) {
+
+  return head;
 };
+
 
 // mock function
 const LinkedList = function () {
 
-  const ListNode = function (val) {
-    this.val = val;
-    this.next = null;
+  //  * Definition for singly - linked list.
+  const ListNode = function (val, next) {
+    this.val = (val === undefined ? 0 : val)
+    this.next = (next === undefined ? null : next)
   }
 
   let length = 0;
@@ -54,26 +55,31 @@ const LinkedList = function () {
     return s;
   }
 
-  this.delete = function (val) {
-    let current = head;
-    while (current) {
-      if (current.val === val) {
-        current.val = current.next.val;
-        current.next = current.next.next;
-      }
-      current = current.next;
+  this.removeNthFromEnd = function (n) {
+    let fast = head;
+    let slow = head;
+    for (let i = 0; i < n; i++) {
+      fast = fast.next;
     }
-
+    if (fast === null) {
+      return head.next;
+    }
+    while (fast.next !== null) {
+      fast = fast.next;
+      slow = slow.next;
+    }
+    slow.next = slow.next.next;
     return this.print().split(',').map(item => Number(item));
   }
 }
 
-const getLinkedList = function (list, node) {
+const getLinkedList = function (list, n) {
   let link = new LinkedList();
   list.forEach(item => {
     link.append(item)
   });
-  return link.delete(node);
+  return link.removeNthFromEnd(n);
 }
+
 
 testFn(getLinkedList, '解法 1');
