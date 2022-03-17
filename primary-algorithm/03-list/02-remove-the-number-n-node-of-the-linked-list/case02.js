@@ -1,7 +1,9 @@
 const testFn = require('./test');
 
 /**
-解法 1
+解法 2
+  72ms, 45.70%
+  41.5MB, 33.72%
 
 思路
 
@@ -58,16 +60,35 @@ const LinkedList = function () {
   this.removeNthFromEnd = function (n) {
     let fast = head;
     let slow = head;
+    let count = 0;
+
     for (let i = 0; i < n; i++) {
-      fast = fast.next;
+      if (fast && fast.next) {
+        fast = fast.next;
+      } else {
+        fast = null;
+        count++
+      }
     }
+
     if (fast === null) {
-      return head.next;
+      if (count === 1) {
+        head = head.next;
+        if (this.print().length === 0) {
+          return [];
+        } else {
+          return this.print().split(',').map(item => Number(item));
+        }
+      } else {
+        return this.print().split(',').map(item => Number(item));
+      }
     }
+
     while (fast.next !== null) {
       fast = fast.next;
       slow = slow.next;
     }
+
     slow.next = slow.next.next;
     return this.print().split(',').map(item => Number(item));
   }
@@ -82,4 +103,4 @@ const getLinkedList = function (list, n) {
 }
 
 
-testFn(getLinkedList, '解法 1');
+testFn(getLinkedList, '解法 2');
