@@ -7,39 +7,13 @@ const testFn = require('./test');
 
 小结
  */
-
+// TODO: error
 /**
  * @param {ListNode} head
  * @param {number} n
  * @return {ListNode}
  */
-const removeNthFromEnd = function (head, n) {
-  let diff = length(head) - n;
-  let current = head;
-  let index = 0;
-
-  if (diff === 0) {
-    return head;
-  }
-
-  while (index < diff - 1) {
-    current = current.next;
-    index++;
-  }
-
-  current.next = (current.next && current.next.next) ? current.next.next : null;
-  return head;
-};
-
-const length = function (node) {
-  let count = 0;
-  if (node) {
-    count++;
-    node = node.next;
-  }
-  return count;
-}
-
+const removeNthFromEnd = function (head, n) { };
 
 // mock function
 const LinkedList = function () {

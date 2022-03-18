@@ -15,10 +15,7 @@ const testFn = require('./test');
  * @param {number} n
  * @return {ListNode}
  */
-const removeNthFromEnd = function (head, n) {
-
-  return head;
-};
+const removeNthFromEnd = function (head, n) { };
 
 
 // mock function

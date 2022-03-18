@@ -51,7 +51,7 @@ const LinkedList = function () {
       s += current.val + (current.next ? ',' : '');
       current = current.next;
     }
-    return s;
+    return s.split(',').map(item => Number(item));
   }
 
   this.delete = function (val) {
@@ -64,7 +64,7 @@ const LinkedList = function () {
       current = current.next;
     }
 
-    return this.print().split(',').map(item => Number(item));
+    return this.print();
   }
 }
 
