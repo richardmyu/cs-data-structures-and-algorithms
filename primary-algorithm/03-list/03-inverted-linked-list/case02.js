@@ -1,12 +1,14 @@
 const testFn = require('./test');
 
 /**
-解法 1
+解法 2
 
 思路
-  迭代
+  for + ary
 
 小结
+  leetcode 无法正常执行。。。JSON.stringify 解析错误
+
  */
 
 /**
@@ -52,7 +54,7 @@ const LinkedList = function () {
   }
 
   this.reverseLinkedList = function () {
-    let prev;
+    let list = [];
     let current = head;
 
     if (current === null) {
@@ -61,31 +63,22 @@ const LinkedList = function () {
       return this.print();
     }
 
-    prev = current;
-
-    // TODO: current.next 指向发生改变，无法获取下一个引用
-    while (current.next) {
+    while (current) {
+      list.push(current);
       current = current.next;
-      console.log('--current', current);
-
-      prev = this.reverseBro(prev, current);
-      console.log('--while--', prev);
-      console.log();
     }
-    head = prev;
+
+    list = list.reverse();
+    head = list[0];
+    list.map((item, index) => {
+      if ((index + 1) < list.length) {
+        item.next = list[index + 1];
+      } else {
+        item.next = null;
+      }
+    })
+
     return this.print();
-  }
-
-  this.reverseBro = function (prev, next) {
-    console.log('Bro--prev', prev);
-    console.log('Bro--next', next);
-    if (prev.next.val === next.val) {
-      prev.next = null;
-    }
-    next.next = prev;
-    console.log('Bro--prev', prev);
-    console.log('Bro--next', next);
-    return next;
   }
 }
 
@@ -98,4 +91,4 @@ const getLinkedList = function (list) {
 }
 
 
-testFn(getLinkedList, '解法 1');
+testFn(getLinkedList, '解法 2');
