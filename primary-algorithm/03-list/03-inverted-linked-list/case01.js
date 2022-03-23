@@ -92,8 +92,11 @@ const LinkedList = function () {
     prev = current;
 
     while (current.next) {
+      console.log('--33', current);
       current = current.next;
+      console.log('--44', current);
       prev = this.reverseBro(prev, current);
+      console.log('--55', prev);
     }
     head = prev;
     return this.print();
@@ -101,6 +104,9 @@ const LinkedList = function () {
 
   this.reverseBro = function (prev, next) {
     next = JSON.parse(JSON.stringify(next))
+    if (prev.val === next.val) {
+      return prev;
+    }
     if (prev.next.val === next.val) {
       prev.next = null;
     }
