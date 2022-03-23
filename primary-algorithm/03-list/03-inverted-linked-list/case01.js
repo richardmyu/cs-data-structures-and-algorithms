@@ -64,7 +64,7 @@ const LinkedList = function () {
     prev = current;
 
     // TODO: current.next 指向发生改变，无法获取下一个引用
-    while (current.next) {
+    while (current) {
       current = current.next;
       console.log('--current', current);
 
