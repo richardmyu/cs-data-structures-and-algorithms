@@ -13,7 +13,34 @@ const testFn = require('./test');
  * @param {ListNode} head
  * @return {ListNode}
  */
-const reverseList = function (head) { };
+const reverseList = function (head) {
+  let prev;
+  let current = head;
+
+  if (current === null) {
+    return head;
+  } else if (current.next === null) {
+    return head;
+  }
+
+  prev = current;
+
+  while (current.next) {
+    current = current.next;
+    prev = reverseBro(prev, current);
+  }
+  head = prev;
+  return head;
+};
+
+const reverseBro = function (prev, next) {
+  next = JSON.parse(JSON.stringify(next))
+  if (prev.next.val === next.val) {
+    prev.next = null;
+  }
+  next.next = prev;
+  return next;
+}
 
 // mock function
 const LinkedList = function () {
@@ -51,6 +78,7 @@ const LinkedList = function () {
     return s.split(',').map(item => Number(item));
   }
 
+  // TODO: [1, 1, 2, 1] 未通过
   this.reverseLinkedList = function () {
     let prev;
     let current = head;
@@ -63,28 +91,20 @@ const LinkedList = function () {
 
     prev = current;
 
-    // TODO: current.next 指向发生改变，无法获取下一个引用
-    while (current) {
+    while (current.next) {
       current = current.next;
-      console.log('--current', current);
-
       prev = this.reverseBro(prev, current);
-      console.log('--while--', prev);
-      console.log();
     }
     head = prev;
     return this.print();
   }
 
   this.reverseBro = function (prev, next) {
-    console.log('Bro--prev', prev);
-    console.log('Bro--next', next);
+    next = JSON.parse(JSON.stringify(next))
     if (prev.next.val === next.val) {
       prev.next = null;
     }
     next.next = prev;
-    console.log('Bro--prev', prev);
-    console.log('Bro--next', next);
     return next;
   }
 }
