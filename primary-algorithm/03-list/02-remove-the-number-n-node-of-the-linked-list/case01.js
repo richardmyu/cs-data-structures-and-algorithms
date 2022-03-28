@@ -1,4 +1,5 @@
 const testFn = require('./test');
+const LinkedList = require('../link-list');
 
 /**
 解法 1

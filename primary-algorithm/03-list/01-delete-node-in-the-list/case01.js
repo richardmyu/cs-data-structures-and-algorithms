@@ -47,11 +47,6 @@ const LinkedList = function () {
   this.print = function () {
     let s = '';
     let current = head;
-
-    if (current === null) {
-      return [];
-    }
-
     while (current) {
       s += current.val + (current.next ? ',' : '');
       current = current.next;
