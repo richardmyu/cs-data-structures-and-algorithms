@@ -53,15 +53,15 @@ const getLinkedList = function (list1, list2) {
   let link2 = new LinkedList();
 
   list1.forEach(item => {
-    link1.append(item)
+    link1.append(item);
   });
 
   list2.forEach(item => {
-    link2.append(item)
+    link2.append(item);
   });
 
   return mergeTwoLists(link1.getHead(), link2.getHead());
-}
+};
 
 
 testFn(getLinkedList, '解法 1');
