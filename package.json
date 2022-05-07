@@ -4,8 +4,8 @@
   "description": "LeetCode 练习集",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint javascript/**/*.js",
-    "lint:fix": "eslint --fix javascript/**/*.js",
+    "lint": "eslint javascript/**/*.js primary-algorithm/**/*.js",
+    "lint:fix": "eslint --fix javascript/**/*.js primary-algorithm/**/*.js",
     "prepare": "husky install",
     "lint-staged": "lint-staged"
   },
