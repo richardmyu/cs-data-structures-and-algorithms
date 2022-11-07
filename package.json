@@ -1,7 +1,7 @@
 {
-  "name": "leetcode-practice",
+  "name": "cs-data-structures-and-algorithms",
   "version": "1.0.0",
-  "description": "LeetCode 练习集",
+  "description": "data-structures-and-algorithms, practice",
   "main": "index.js",
   "scripts": {
     "lint": "eslint javascript/**/*.js primary-algorithm/**/*.js",
@@ -11,19 +11,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/richardmyu/leetcode-practice.git"
+    "url": "git+https://github.com/richardmyu/cs-data-structures-and-algorithms.git"
   },
   "keywords": [
+    "data structures",
     "algorithms",
     "javascript",
-    "python"
+    "python",
+    "sql"
   ],
   "author": "yum",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/richardmyu/leetcode-practice/issues"
+    "url": "https://github.com/richardmyu/cs-data-structures-and-algorithms/issues"
   },
-  "homepage": "https://github.com/richardmyu/leetcode-practice#readme",
+  "homepage": "https://github.com/richardmyu/cs-data-structures-and-algorithms#readme",
   "devDependencies": {
     "eslint": "^8.6.0",
     "husky": "^7.0.4",
