@@ -2,8 +2,6 @@ const testFn = require('./test');
 
 /**
 解法 1
-  88ms, 89.27%
-  48.3MB, 5.29%
 
 思路
   Array.prototype.reverse()

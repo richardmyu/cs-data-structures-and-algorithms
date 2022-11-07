@@ -2,8 +2,6 @@ const testFn = require('./test');
 
 /**
 解法 2
-  4500ms, 5.01%
-  46.9MB， 22.08%
 
 思路
   indexOf / lastIndexOf

@@ -2,8 +2,6 @@ const testFn = require('./test');
 
 /**
 解法 1
-  3812ms, 5.02%
-  86.5MB, 5.05%
 
 思路
   解析 numRows 分别为 3，4 时的分布规律，并推广到一般情况

@@ -2,8 +2,6 @@ const testFn = require('./test');
 
 /**
 解法 1
-  76ms, 98.97%
-  40.4MB, 27.80%
 
 思路
   借用 parseFloat，再加一个范围判断；

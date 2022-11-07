@@ -2,8 +2,6 @@ const testFn = require('./test');
 
 /**
 解法 2
-  76ms, 99.09%
-  48.8MB, 5.07%
 
 思路
   for + 收尾调换（区分奇/偶数长度）

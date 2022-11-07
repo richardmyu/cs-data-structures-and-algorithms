@@ -2,8 +2,6 @@ const testFn = require('./test');
 
 /**
 解法 1
-  280ms, 16.02%
-  45.5MB, 10.88%
 
 思路
   splice + count

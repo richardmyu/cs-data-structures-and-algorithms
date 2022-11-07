@@ -3,8 +3,6 @@ const { longP } = require('./test');
 
 /**
 解法 1
-  2800ms, 11.5%
-  44MB, 51.44%
 
 思路
   主函数通过 `lastIndexOf` 方法，获取到所有以 s[i] 开始结尾的子串，然后通过回文函数（isPalindromeStr）判断

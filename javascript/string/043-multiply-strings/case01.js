@@ -2,8 +2,6 @@ const testFn = require('./test');
 
 /**
 解法 1
-  88ms, 56.38%
-  39.6MB, 84.91%
 
 思路
   使用 BigInt，严格来说，是不行的
