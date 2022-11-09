@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-def length_of_longest_substring(s: str) -> int:
+
+def lengthOfLongestSubstring(s: str) -> int:
     s_len = len(s)
     subs = ''
     subs_len = 0
