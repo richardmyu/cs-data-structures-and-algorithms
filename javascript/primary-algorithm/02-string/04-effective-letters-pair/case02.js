@@ -2,8 +2,6 @@ const testFn = require('./test');
 
 /**
 解法 2
-  91ms, 51.44%
-  48.3MB, 5.02%
 
 思路
   重排序，回避的对 Unicode 字符的处理

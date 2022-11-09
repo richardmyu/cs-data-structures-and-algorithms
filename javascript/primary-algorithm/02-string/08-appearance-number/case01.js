@@ -2,8 +2,6 @@ const testFn = require('./test');
 
 /**
 解法 1
-  60ms, 96.21%
-  43.9MB, 9.00%
 
 思路
 

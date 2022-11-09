@@ -3,8 +3,6 @@ const LinkedList = require('../link-list');
 
 /**
 解法 1
-  64ms, 94.18%
-  43MB, 32.33%
 
 思路
 

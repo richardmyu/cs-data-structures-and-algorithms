@@ -1,4 +1,4 @@
-const isPalindromeStr = require('./tool');
+// const isPalindromeStr = require('./tool');
 const { longP } = require('./test');
 
 /**
