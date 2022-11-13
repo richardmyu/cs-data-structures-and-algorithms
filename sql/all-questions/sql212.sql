@@ -1,6 +1,4 @@
--- SQL212
--- 获取当前薪水第二多的员工的 emp_no
--- 以及其对应的薪水 salary
+-- SQL212  获取当前薪水第二多的员工的 emp_no 以及其对应的薪水 salary
 SELECT
   E.emp_no,
   SE.salary,
