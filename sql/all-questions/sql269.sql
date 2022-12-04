@@ -22,3 +22,25 @@ GROUP BY
   job
 ORDER BY
   job;
+
+-- case 02
+SELECT
+  job,
+  FLOOR((MAX(ranking) + 1) / 2) AS 'start',
+  CEILING((MAX(ranking) + 1) / 2) AS 'end'
+FROM
+  (
+    SELECT
+      job,
+      ROW_NUMBER() OVER (
+        PARTITION BY job
+        ORDER BY
+          score DESC
+      ) AS ranking
+    FROM
+      grade
+  ) AS RL
+GROUP BY
+  job
+ORDER BY
+  job;
