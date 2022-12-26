@@ -1,80 +1,76 @@
 -- SQL282 最差是第几名(二)
--- TODO: fail
+-- TODO: 当某一数的正序和逆序累计均大于整个序列的数字个数的一半即为中位数
 SELECT
-  OC.grade
+  grade
 FROM
   (
     SELECT
       grade,
       (
-        SUM(number) OVER (
-          ORDER BY
-            grade
-        ) - number
-      ) AS t_rank,
-      SUM(number) OVER (
+        SELECT
+          SUM(number)
+        FROM
+          class_grade
+      ) AS total,
+      SUM(number) over(
         ORDER BY
           grade
-      ) AS b_rank
+      ) a,
+      SUM(number) over(
+        ORDER BY
+          grade desc
+      ) b
     FROM
       class_grade
-    ORDER BY
-      grade
-  ) AS OC
-  INNER JOIN (
-    SELECT
-      grade,
-      CASE
-        WHEN (
-          SELECT
-            SUM(number)
-          FROM
-            class_grade
-        ) % 2 <> 0 THEN CEILING(
-          (
-            SELECT
-              SUM(number)
-            FROM
-              class_grade
-          ) / 2
-        )
-        ELSE (
-          (
-            SELECT
-              SUM(number)
-            FROM
-              class_grade
-          ) / 2
-        )
-      END AS meidan,
-      CASE
-        WHEN (
-          SELECT
-            SUM(number)
-          FROM
-            class_grade
-        ) % 2 = 0 THEN (
-          SELECT
-            SUM(number)
-          FROM
-            class_grade
-        ) / 2 + 1
-        ELSE NULL
-      END AS sec_meidan
-    FROM
-      class_grade
-  ) AS MC ON OC.grade = MC.grade
+  ) AS t
 WHERE
-  (
-    MAX(b_rank) % 2 <> 0
-    AND meidan BETWEEN t_rank
-    AND b_rank
-  )
-  OR (
-    meidan BETWEEN t_rank
-    AND b_rank
-    AND sec_meidan BETWEEN t_rank
-    AND b_rank
-  )
+  (a >= (total / 2))
+  AND (b >= (total / 2))
 ORDER BY
   grade;
+
+-- TEST
+drop table if exists class_grade;
+
+CREATE TABLE class_grade (
+  grade varchar(32) NOT NULL,
+  number int(4) NOT NULL
+);
+
+INSERT INTO
+  class_grade
+VALUES
+  ('A', 2),
+  ('C', 4),
+  ('B', 4),
+  ('D', 2);
+
+drop table if exists class_grade;
+
+CREATE TABLE class_grade (
+  grade varchar(32) NOT NULL,
+  number int(4) NOT NULL
+);
+
+INSERT INTO
+  class_grade
+VALUES
+  ('A', 9),
+  ('C', 1),
+  ('B', 1),
+  ('D', 1);
+
+drop table if exists class_grade;
+
+CREATE TABLE class_grade (
+  grade varchar(32) NOT NULL,
+  number int(4) NOT NULL
+);
+
+INSERT INTO
+  class_grade
+VALUES
+  ('A', 2),
+  ('C', 2),
+  ('B', 2),
+  ('D', 1);
