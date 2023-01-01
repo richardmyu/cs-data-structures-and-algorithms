@@ -11,16 +11,15 @@ const testFn = require('./test');
  */
 
 /**
- * @param {number[]} nums
+ * @param {array} nums
  * @return {number}
  */
 const removeDuplicates = function (nums) {
   if (!Array.isArray(nums)) {
     return;
   }
-  // nums = Array.from(new Set(nums));
+
   nums = [...new Set(nums)];
-  console.log(nums);
   return nums.length;
 };
 

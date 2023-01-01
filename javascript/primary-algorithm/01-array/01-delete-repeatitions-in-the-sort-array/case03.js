@@ -11,7 +11,7 @@ const testFn = require('./test');
  */
 
 /**
- * @param {number[]} nums
+ * @param {array} nums
  * @return {number}
  */
 const removeDuplicates = function (nums) {
@@ -33,6 +33,7 @@ const removeDuplicates = function (nums) {
     }
 
   }
+
   return nums.length;
 };
 
