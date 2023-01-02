@@ -23,6 +23,7 @@ const groupAnagrams = function (strs) {
 
   if (leng === 0) {
     r.push(strs);
+
     return r;
   }
 
@@ -42,15 +43,16 @@ const groupAnagrams = function (strs) {
         // list.sort();
       }
     }
+
     r.push(list);
   }
 
   r = r.sort((a, b) => {
     a.sort();
     b.sort();
+
     return a.length - b.length;
   });
-
 
   return r;
 };

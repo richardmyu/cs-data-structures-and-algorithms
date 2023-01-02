@@ -18,6 +18,7 @@ const firstUniqChar = function (s) {
       return i;
     }
   }
+
   return -1;
 };
 

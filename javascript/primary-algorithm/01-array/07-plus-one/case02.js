@@ -10,16 +10,18 @@ const testFn = require('./test');
  */
 
 /**
- * @param {number[]} digits
- * @return {number[]}
+ * @param {array} digits
+ * @return {array}
  */
 const plusOne = function (digits) {
   if (!Array.isArray(digits)) {
     return;
   }
+
   let r = [];
   let leng = digits.length - 1;
   let flag = false;
+
   for (let i = leng; i >= 0; i--) {
     if (i === leng && leng === 0) {
       if (digits[i] === 9) {
@@ -62,6 +64,7 @@ const plusOne = function (digits) {
       }
     }
   }
+
   return r;
 };
 

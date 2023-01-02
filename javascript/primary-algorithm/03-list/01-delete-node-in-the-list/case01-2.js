@@ -22,9 +22,11 @@ LinkedList.prototype.deleteNode = deleteNode;
 
 const getLinkedList = function (list, node) {
   let link = new LinkedList();
+
   list.forEach(item => {
     link.append(item);
   });
+
   return link.deleteNode(node);
 };
 

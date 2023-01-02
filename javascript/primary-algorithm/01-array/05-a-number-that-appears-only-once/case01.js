@@ -10,13 +10,14 @@ const testFn = require('./test');
  */
 
 /**
- * @param {number[]} nums
+ * @param {array} nums
  * @return {number}
  */
 const singleNumber = function (nums) {
   if (!Array.isArray(nums)) {
     return;
   }
+
   for (let i = 0; i < nums.length; i++) {
     if (nums.indexOf(nums[i]) > -1 && nums.indexOf(nums[i]) === nums.lastIndexOf(nums[i])) {
       return nums[i];

@@ -17,6 +17,7 @@ const addBinary = function (a, b) {
   if (a === '0' || b === '0') {
     return String(Number(a) + Number(b));
   }
+
   let max_n = a.length >= b.length ? a : b;
   let min_n = a.length < b.length ? a : b;
   max_n = max_n.split('').reverse();
@@ -26,6 +27,7 @@ const addBinary = function (a, b) {
 
   for (let i = 0; i < max_n.length; i++) {
     let is_end = i === (max_n.length - 1);
+
     if (min_n[i]) {
       if (is_carry) {
         if (is_end) {
@@ -83,6 +85,7 @@ const addBinary = function (a, b) {
       }
     }
   }
+
   return r.split('').reverse().join('');
 };
 

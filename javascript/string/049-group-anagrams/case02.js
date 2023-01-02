@@ -21,11 +21,14 @@ const groupAnagrams = function (strs) {
   let r = [];
   let obj = {};
   let leng = strs.length;
+
   for (let i = 0; i < leng; i++) {
     let n_strs = 0;
+
     for (let j = 0; j < strs[i].length; j++) {
       n_strs *= strs[i].charCodeAt([j]);
     }
+
     if (!obj[n_strs]) {
       obj[n_strs] = [strs[i]];
     } else {
@@ -36,6 +39,7 @@ const groupAnagrams = function (strs) {
   r = Object.values(obj).sort((a, b) => {
     a.sort();
     b.sort();
+
     return a.length - b.length;
   });
 

@@ -10,14 +10,15 @@ const testFn = require('./test');
  */
 
 /**
- * @param {number[]} nums
+ * @param {array} nums
  * @param {number} k
- * @return {void} Do not return anything, modify nums in-place instead.
+ * @return {void}
  */
 const rotate = function (nums, k) {
   if (!Array.isArray(nums) || k < 0) {
     return;
   }
+
   k = k % nums.length;
   let step = nums.length - k;
   nums = nums.splice(-k, step).concat(nums);

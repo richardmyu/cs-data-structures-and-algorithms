@@ -30,12 +30,14 @@ const convert = function (s, numRows) {
   if (numRows <= 1) {
     return s;
   }
+
   let leng = s.length;
   let ary = [];
   let step = 2 * numRows - 2;
 
   for (let j = 0; j < numRows; j++) {
     ary[j] = [];
+
     for (let i = 1; i <= leng; i++) {
       if (j < 1) {
         if ((i + 1) % 2 === 0 && (i % step) === (j + 1)) {
@@ -58,7 +60,6 @@ const convert = function (s, numRows) {
     }
   }
 
-  console.log(ary);
   return ary.flat(2).join('');
 };
 

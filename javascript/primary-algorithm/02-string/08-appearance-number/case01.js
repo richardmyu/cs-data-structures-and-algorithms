@@ -24,9 +24,11 @@ const countAndSay = function (n) {
     if (r[i + 1]) {
       if (r[i] === r[i + 1]) {
         let j = i + 1;
+
         while (j < r.length && r[i] === r[j]) {
           j++;
         }
+
         s += (j - i) + r[i];
         i = j - 1;
       } else {

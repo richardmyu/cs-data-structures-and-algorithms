@@ -19,6 +19,7 @@ const longestCommonPrefix = function (strs) {
 
   let str = '';
   let minleng = Math.min(...strs.map(item => item.length));
+
   for (let i = 0; i < minleng; i++) {
     if (strs.slice(1).every(item => item[i] === strs[0][i])) {
       str += strs[0][i];
@@ -26,6 +27,7 @@ const longestCommonPrefix = function (strs) {
       return str;
     }
   }
+
   return str;
 };
 

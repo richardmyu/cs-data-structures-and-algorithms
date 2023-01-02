@@ -10,14 +10,16 @@ const testFn = require('./test');
  */
 
 /**
- * @param {number[]} nums
- * @return {void} Do not return anything, modify nums in-place instead.
+ * @param {array} nums
+ * @return {void}
  */
 const moveZeroes = function (nums) {
   if (!Array.isArray(nums)) {
     return;
   }
+
   let count = 0;
+
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] === 0) {
       nums.splice(i, 1);
@@ -25,9 +27,11 @@ const moveZeroes = function (nums) {
       i--;
     }
   }
+
   for (let j = 0; j < count; j++) {
     nums.push(0);
   }
+
   return nums;
 };
 

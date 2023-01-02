@@ -23,6 +23,7 @@ const strStr = function (haystack, needle) {
   }
 
   let r = haystack.match(needle);
+
   if (r) {
     return r['index'];
   } else {

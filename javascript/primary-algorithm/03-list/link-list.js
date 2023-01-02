@@ -18,15 +18,19 @@ let LinkedList = (function () {
     append(val) {
       let node = new Node(val);
       let current;
+
       if (this.getHead() === null) {
         head.set(this, node);
       } else {
         current = this.getHead();
+
         while (current.next) {
           current = current.next;
         }
+
         current.next = node;
       }
+
       let l = this.size();
       l++;
       length.set(this, l);
@@ -38,6 +42,7 @@ let LinkedList = (function () {
         let current = this.getHead();
         let prev;
         let index = 0;
+
         if (position === 0) {
           node.next = current;
           head.set(this, node);
@@ -46,12 +51,15 @@ let LinkedList = (function () {
             prev = current;
             current = current.next;
           }
+
           node.next = current;
           prev.next = node;
         }
+
         let l = this.size();
         l++;
         length.set(this, l);
+
         return true;
       } else {
         return false;
@@ -71,12 +79,14 @@ let LinkedList = (function () {
             prev = current;
             current = current.next;
           }
+
           prev.next = current.next;
         }
 
         let l = this.size();
         l--;
         length.set(this, l);
+
         return current.val;
       } else {
         return null;
@@ -85,6 +95,7 @@ let LinkedList = (function () {
 
     remove(val) {
       let index = this.indexOf(val);
+
       return this.removeAt(index);
     }
 
@@ -96,9 +107,11 @@ let LinkedList = (function () {
         if (val === current.val) {
           return index;
         }
+
         index++;
         current = current.next;
       }
+
       return -1;
     }
 
@@ -122,6 +135,7 @@ let LinkedList = (function () {
         str += current.val + (current.next ? ',' : '');
         current = current.next;
       }
+
       return str;
     }
 
@@ -129,7 +143,6 @@ let LinkedList = (function () {
       console.log(this.toString());
     }
   }
-
 
   return LinkedList;
 })();

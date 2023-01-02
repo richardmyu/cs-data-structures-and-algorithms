@@ -24,14 +24,15 @@ const mergeTwoLists = function (list1, list2) {
     ary.push(list1);
     list1 = list1.next;
   }
+
   ary.push(list1);
 
   while (list2.next) {
     ary.push(list2);
     list2 = list2.next;
   }
-  ary.push(list2);
 
+  ary.push(list2);
   ary = ary.sort((a, b) => a.val - b.val);
 
   ary = ary.map((item, index) => {
@@ -42,6 +43,7 @@ const mergeTwoLists = function (list1, list2) {
         item.next = null;
       }
     }
+
     return item.val;
   });
 

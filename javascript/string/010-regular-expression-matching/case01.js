@@ -29,15 +29,17 @@ const isMatch = function (s, p) {
     pLeng = p.length,
     pIndex = 0,
     sIndex = 0;
-  console.log(s, p);
+
   // 不含 `.` 和 `*`，长度一样再比较字符；
   if (!p.includes('.') && !p.includes('*')) {
     return s.length === p.length ? s === p : false;
   }
+
   // 错误模式
   if (p[0] === '*' || p.includes('**')) {
     return false;
   }
+
   if (sLeng === 0 && (p !== '.' && p !== '.*')) {
     return false;
   }
@@ -47,7 +49,6 @@ const isMatch = function (s, p) {
     for (let j = pIndex; j < pLeng; j++) {
       console.log('000');
       console.log('   ', `s[${i}] = ${s[i]} p[${j}] = ${p[j]}`);
-
 
       // 如果字符相同，或者遇到 `.`、`*`，跳出本轮循环，在外循环中进行下一位比较
       if (s[i] === p[j] || p[j] === '.' || (p[j] === '*' && (s[i] === p[j - 1] || p[j - 1] === '.'))) {
@@ -118,6 +119,7 @@ const isMatch = function (s, p) {
       }
     }
   }
+
   return true;
 };
 

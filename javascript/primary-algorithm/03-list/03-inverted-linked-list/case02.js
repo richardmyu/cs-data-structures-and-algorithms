@@ -1,125 +1,133 @@
-// const testFn = require('./test');
-// const LinkedList = require('../link-list');
+const testFn = require('./test');
+const LinkedList = require('../link-list');
 
-// /**
-// 解法 2
+/**
+解法 2
 
-// 思路
-//   for + ary
+思路
+  for + ary
 
-// 小结
+小结
 
-//  */
+ */
 
-// /**
-//  * @param {ListNode} head
-//  * @return {ListNode}
-//  */
-// const reverseList = function (head) {
-//   let list = [];
-//   let current = head;
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+const reverseList = function (head) {
+  let list = [];
+  let current = head;
 
-//   if (current === null) {
-//     return head;
-//   } else if (current.next === null) {
-//     return head;
-//   }
+  if (current === null) {
+    return head;
+  } else if (current.next === null) {
+    return head;
+  }
 
-//   while (current) {
-//     list.push(current);
-//     current = current.next;
-//   }
+  while (current) {
+    list.push(current);
+    current = current.next;
+  }
 
-//   list = list.reverse();
-//   head = list[0];
-//   list.map((item, index) => {
-//     if ((index + 1) < list.length) {
-//       item.next = list[index + 1];
-//     } else {
-//       item.next = null;
-//     }
-//   })
+  list = list.reverse();
+  head = list[0];
 
-//   return head;
-// };
+  list.map((item, index) => {
+    if ((index + 1) < list.length) {
+      item.next = list[index + 1];
+    } else {
+      item.next = null;
+    }
+  })
 
-// // mock function
-// const LinkedList = function () {
+  return head;
+};
 
-//   //  * Definition for singly - linked list.
-//   const ListNode = function (val, next) {
-//     this.val = (val === undefined ? 0 : val)
-//     this.next = (next === undefined ? null : next)
-//   }
+// mock function
+const LinkedList = function () {
 
-//   let length = 0;
-//   let head = null;
+  //  * Definition for singly - linked list.
+  const ListNode = function (val, next) {
+    this.val = (val === undefined ? 0 : val)
+    this.next = (next === undefined ? null : next)
+  }
 
-//   this.append = function (val) {
-//     let node = new ListNode(val);
-//     if (head === null) {
-//       head = node;
-//     } else {
-//       let current = head;
-//       while (current.next) {
-//         current = current.next;
-//       }
-//       current.next = node;
-//     }
-//     length++;
-//   }
+  let length = 0;
+  let head = null;
 
-//   this.print = function () {
-//     let s = '';
-//     let current = head;
+  this.append = function (val) {
+    let node = new ListNode(val);
 
-//     if (current === null) {
-//       return [];
-//     }
+    if (head === null) {
+      head = node;
+    } else {
+      let current = head;
 
-//     while (current) {
-//       s += current.val + (current.next ? ',' : '');
-//       current = current.next;
-//     }
-//     return s.split(',').map(item => Number(item));
-//   }
+      while (current.next) {
+        current = current.next;
+      }
 
-//   this.reverseLinkedList = function () {
-//     let list = [];
-//     let current = head;
+      current.next = node;
+    }
 
-//     if (current === null) {
-//       return [];
-//     } else if (current.next === null) {
-//       return this.print();
-//     }
+    length++;
+  }
 
-//     while (current) {
-//       list.push(current);
-//       current = current.next;
-//     }
+  this.print = function () {
+    let s = '';
+    let current = head;
 
-//     list = list.reverse();
-//     head = list[0];
-//     list.map((item, index) => {
-//       if ((index + 1) < list.length) {
-//         item.next = list[index + 1];
-//       } else {
-//         item.next = null;
-//       }
-//     })
+    if (current === null) {
+      return [];
+    }
 
-//     return this.print();
-//   }
-// }
+    while (current) {
+      s += current.val + (current.next ? ',' : '');
+      current = current.next;
+    }
 
-// const getLinkedList = function (list) {
-//   let link = new LinkedList();
-//   list.forEach(item => {
-//     link.append(item)
-//   });
-//   return link.reverseLinkedList();
-// }
+    return s.split(',').map(item => Number(item));
+  }
 
+  this.reverseLinkedList = function () {
+    let list = [];
+    let current = head;
 
-// testFn(getLinkedList, '解法 2');
+    if (current === null) {
+      return [];
+    } else if (current.next === null) {
+      return this.print();
+    }
+
+    while (current) {
+      list.push(current);
+      current = current.next;
+    }
+
+    list = list.reverse();
+    head = list[0];
+
+    list.map((item, index) => {
+      if ((index + 1) < list.length) {
+        item.next = list[index + 1];
+      } else {
+        item.next = null;
+      }
+    })
+
+    return this.print();
+  }
+}
+
+const getLinkedList = function (list) {
+  let link = new LinkedList();
+
+  list.forEach(item => {
+    link.append(item)
+  });
+
+  return link.reverseLinkedList();
+}
+
+testFn(getLinkedList, '解法 2');

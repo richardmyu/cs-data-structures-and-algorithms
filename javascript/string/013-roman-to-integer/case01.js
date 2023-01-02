@@ -28,8 +28,10 @@ const romanToInt = function (s) {
     'CM': 900,
     'M': 1000
   };
+
   let leng = s.length;
   let num = 0;
+
   for (let i = 0; i < leng; i++) {
     if (switchChar.hasOwnProperty(s[i] + s[i + 1])) {
       num += switchChar[s[i] + s[i + 1]];
@@ -39,6 +41,7 @@ const romanToInt = function (s) {
       num += switchChar[s[i]];
     }
   }
+
   return num;
 };
 

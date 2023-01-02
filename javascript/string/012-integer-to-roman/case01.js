@@ -18,14 +18,17 @@ const intToRoman = function (num) {
   if (num < 1 || num > 3999) {
     return false;
   }
+
   if (/[^0-9]+/.test(String(num))) {
     return false;
   }
+
   let s = '';
   let a = Math.floor(num / 1000);
   let b = Math.floor((num % 1000) / 100);
   let c = Math.floor((num % 100) / 10);
   let d = Math.floor(num % 10);
+
   const switchChar = {
     1: 'I',
     4: 'IV',
@@ -41,6 +44,7 @@ const intToRoman = function (num) {
     900: 'CM',
     1000: 'M'
   };
+
   if (a) {
     if (switchChar.hasOwnProperty(a * 1000)) {
       s += switchChar[a * 1000 + ''];
@@ -48,6 +52,7 @@ const intToRoman = function (num) {
       s += switchChar['1000'].repeat(a);
     }
   }
+
   if (b) {
     if (switchChar.hasOwnProperty(b * 100)) {
       s += switchChar[b * 100 + ''];
@@ -59,6 +64,7 @@ const intToRoman = function (num) {
       }
     }
   }
+
   if (c) {
     if (switchChar.hasOwnProperty(c * 10)) {
       s += switchChar[c * 10 + ''];
@@ -70,6 +76,7 @@ const intToRoman = function (num) {
       }
     }
   }
+
   if (d) {
     if (switchChar.hasOwnProperty(d)) {
       s += switchChar[d + ''];
@@ -81,6 +88,7 @@ const intToRoman = function (num) {
       }
     }
   }
+
   return s;
 };
 

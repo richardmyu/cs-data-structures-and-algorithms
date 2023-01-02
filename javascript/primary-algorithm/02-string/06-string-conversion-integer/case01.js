@@ -37,6 +37,7 @@ const myAtoi = function (s) {
     if (s === '') {
       return -0;
     }
+
     if (-Number(s) < MIN_NUM) {
       return MIN_NUM;
     } else {
@@ -46,6 +47,7 @@ const myAtoi = function (s) {
     if (s === '') {
       return 0;
     }
+
     if (Number(s) > MAX_NUM) {
       return MAX_NUM;
     } else {

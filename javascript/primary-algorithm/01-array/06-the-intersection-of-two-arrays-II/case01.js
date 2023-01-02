@@ -9,17 +9,19 @@ const testFn = require('./test');
  */
 
 /**
- * @param {number[]} nums1
- * @param {number[]} nums2
- * @return {number[]}
+ * @param {array} nums1
+ * @param {array} nums2
+ * @return {array}
  */
 const intersect = function (nums1, nums2) {
   if (!Array.isArray(nums1) || !Array.isArray(nums2)) {
     return;
   }
+
   let max_num = [];
   let min_num = [];
   let r = [];
+
   if (nums1.length > nums2.length) {
     max_num = nums1;
     min_num = nums2;
@@ -51,6 +53,7 @@ const acountChar = function (s, ary) {
   if (!Array.isArray(ary)) {
     return;
   }
+
   let r = [];
   r = ary.filter(item => item === s);
   return r;

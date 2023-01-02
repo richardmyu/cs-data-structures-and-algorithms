@@ -40,6 +40,7 @@ const lengthOfLongestSubstring = function (s) {
   //   1.字符串自身就是不重复的最长子串
   //   2.字符串的后面部分不重复
   ary.push(str.length);
+
   return Math.max(...ary);
 };
 

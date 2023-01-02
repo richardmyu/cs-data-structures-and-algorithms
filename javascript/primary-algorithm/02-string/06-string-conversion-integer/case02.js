@@ -16,6 +16,7 @@ const myAtoi = function (s) {
   const MAX_NUM = Math.pow(2, 31) - 1;
   const MIN_NUM = Math.pow(-2, 31);
   s = s.trim();
+
   if (Number.isNaN(parseInt(s))) {
     if (s[0] === '-') {
       return -0;

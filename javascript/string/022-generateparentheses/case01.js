@@ -26,22 +26,25 @@ const generateParenthesis = function (n) {
   if (n < 1 || n > 8) {
     return false;
   }
+
   let r = [];
+
   if (n === 1) {
     r.push('()');
   } else {
     let list = generateParenthesis(n - 1);
+
     for (let i = 0; i < list.length; i++) {
       for (let j = 0; j < list[i].length; j++) {
         r.push(list[i].slice(0, j) + '()' + list[i].slice(j));
       }
     }
   }
+
   return [...new Set(r)];
 };
 
 // generateParenthesis(1);
 // generateParenthesis(2);
 // generateParenthesis(3);
-
 testFn(generateParenthesis, '解法 1');

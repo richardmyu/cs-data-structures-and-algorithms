@@ -15,6 +15,7 @@ const testFn = require('./test');
 const isPalindrome = function (s) {
   s = s.replace(/[^a-z0-9]{1,}/gi, '').toLocaleLowerCase();
   let leng = s.length;
+
   if (leng % 2 === 0) {
     for (let i = 0; i < (leng / 2); i++) {
       if (s[i] !== s[leng - 1 - i]) {
@@ -28,6 +29,7 @@ const isPalindrome = function (s) {
       }
     }
   }
+
   return true;
 };
 

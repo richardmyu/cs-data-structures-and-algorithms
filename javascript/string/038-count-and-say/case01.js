@@ -18,18 +18,24 @@ const countAndSay = function (n) {
   if (n < 0 || n > 30) {
     return;
   }
+
   let str = '';
+
   if (n === 1) {
     str = '1';
   }
+
   if (n >= 2) {
     let s = countAndSay(n - 1);
     let ary = [];
+
     for (let i = 0; i < s.length; i++) {
       let obj = {};
       let prevItem = {};
+
       if (ary.slice().reverse().some(item => {
         item.item.name === s[i] ? prevItem = item : {};
+
         return item.item.name === s[i];
       }) && (s[i] === s[i - 1])) {
         prevItem.item.count += 1;
@@ -43,13 +49,14 @@ const countAndSay = function (n) {
         ary.push(obj);
       }
     }
+
     for (let i = 0; i < ary.length; i++) {
       for (let [key, value] of Object.entries(ary[i])) {
         str += value.count + value.name;
       }
     }
-
   }
+
   return str;
 };
 

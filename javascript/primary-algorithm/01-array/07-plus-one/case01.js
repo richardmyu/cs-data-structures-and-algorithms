@@ -10,14 +10,15 @@ const testFn = require('./test');
  */
 
 /**
- * @param {number[]} digits
- * @return {number[]}
+ * @param {array} digits
+ * @return {array}
  */
 const plusOne = function (digits) {
   if (!Array.isArray(digits)) {
     return;
   }
-  return String(BigInt(digits.join('')) + BigInt(1)).split('').map(item=>Number(item));
+
+  return String(BigInt(digits.join('')) + BigInt(1)).split('').map(item => Number(item));
 };
 
 testFn(plusOne, '解法 1');

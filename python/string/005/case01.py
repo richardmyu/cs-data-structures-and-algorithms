@@ -6,12 +6,16 @@ def longestPalindrome(s: str) -> str:
     s_len = len(s)
     subs = ''
     list = []
+
     if s_len == 0:
         return ''
+
     if s_len == 1:
         return s
+
     for index, value in enumerate(s):
         next_index = index + 1
+
         while True:
             next_index = s.find(value, next_index)
             if next_index > 0:
@@ -19,12 +23,15 @@ def longestPalindrome(s: str) -> str:
                 next_index = next_index + 1
             else:
                 break
+
     if len(list) == 0:
         return s[0]
+
     for item in list:
         if isPalindrome(item):
             if len(subs) < len(item):
                 subs = item
+
     if subs in list:
         return subs
     else:
@@ -34,9 +41,11 @@ def longestPalindrome(s: str) -> str:
 def isPalindrome(s: str) -> bool:
     if (len(s) == 0 or len(s) == 1):
         return True
+
     for index, value in enumerate(s):
         if (index <= int(len(s) / 2) and value != s[len(s) - 1 - index]):
             return False
+
     return True
 
 

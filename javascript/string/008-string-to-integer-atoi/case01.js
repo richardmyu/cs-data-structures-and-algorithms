@@ -16,6 +16,7 @@ const testFn = require('./test');
 const myAtoi = function (s) {
   const MINNUM = (-2) ** 31;
   const MAXNUM = 2 ** 31 - 1;
+
   let str = s.trim(),
     leng = str.length,
     substr = str.slice(),
@@ -36,6 +37,7 @@ const myAtoi = function (s) {
         let secdotIndex = substr.slice(substr.indexOf(j) + 1).indexOf(j) + substr.indexOf(j) + 1;
         substr = substr.slice(0, secdotIndex);
       }
+
       // + - 出现在非首位
       if (j !== '.' && substr[0] !== j && substr.includes(j)) {
         substr = substr.slice(0, substr.indexOf(j));

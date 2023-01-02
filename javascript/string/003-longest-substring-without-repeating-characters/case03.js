@@ -33,7 +33,8 @@ const lengthOfLongestSubstring = function (s) {
   }
 
   subLeng = str.length > subLeng ? str.length : subLeng;
+
   return subLeng;
 };
 
-testFn(lengthOfLongestSubstring,'解法 3');
+testFn(lengthOfLongestSubstring, '解法 3');

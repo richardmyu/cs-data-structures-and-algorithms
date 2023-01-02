@@ -10,13 +10,14 @@ const testFn = require('./test');
  */
 
 /**
- * @param {number[]} nums
+ * @param {array} nums
  * @return {boolean}
  */
 const containsDuplicate = function (nums) {
   if (!Array.isArray(nums)) {
     return false;
   }
+
   if (nums.length === Array.from(new Set(nums)).length) {
     return false;
   } else {

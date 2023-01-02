@@ -10,11 +10,11 @@ const testFn = require('./test');
  */
 
 /**
- * @param {character[]} s
- * @return {void} Do not return anything, modify s in-place instead.
+ * @param {array} s
+ * @return {void}
  */
 const reverseString = function (s) {
   return s.reverse();
 };
 
-testFn(reverseString,'解法 1');
+testFn(reverseString, '解法 1');

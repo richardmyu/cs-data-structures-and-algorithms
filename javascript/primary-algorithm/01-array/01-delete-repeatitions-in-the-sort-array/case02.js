@@ -4,7 +4,7 @@ const testFn = require('./test');
 解法 2
 
 思路
-  Array.from and new Set
+  Set
 
 小结
   leetcode 无法正确执行，排除因素，确定是 Set

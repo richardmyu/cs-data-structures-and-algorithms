@@ -21,7 +21,7 @@ const multiply = function (num1, num2) {
   for (let i = leng; i >= 0; i--) {
     let mul = BigInt(1);
 
-    if ((leng+1) < String(Number.MAX_SAFE_INTEGER).length) {
+    if ((leng + 1) < String(Number.MAX_SAFE_INTEGER).length) {
       mul = BigInt(Math.pow(10, leng - i));
     } else {
       // 超过安全数值范围时，Math.pow(10, leng - i) 会溢出
@@ -37,8 +37,8 @@ const multiply = function (num1, num2) {
     }
 
     num = BigInt(num) + BigInt(num1) * BigInt(num2[i]) * mul;
-
   }
+
   return num.toString();
 };
 

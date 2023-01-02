@@ -59,6 +59,7 @@ const multiply = function (num1, num2) {
     for (let i = 0; i < max_num_int; i++) {
       max_num_ary.push(max_num.slice(i * NUM_DIGITS, (i + 1) * NUM_DIGITS));
     }
+
     max_num_ary.push(max_num.slice(max_num_int * NUM_DIGITS));
 
     // 累乘
@@ -86,6 +87,7 @@ const multiply = function (num1, num2) {
     for (let m = 0; m < max_num_int; m++) {
       max_num_ary.push(max_num.slice(m * NUM_DIGITS, (m + 1) * NUM_DIGITS));
     }
+
     if (max_num.slice(max_num_int * NUM_DIGITS)) {
       max_num_ary.push(max_num.slice(max_num_int * NUM_DIGITS));
     }
@@ -94,10 +96,10 @@ const multiply = function (num1, num2) {
     for (let n = 0; n < min_num_int; n++) {
       min_num_ary.push(min_num.slice(n * NUM_DIGITS, (n + 1) * NUM_DIGITS));
     }
+
     if (min_num.slice(min_num_int * NUM_DIGITS)) {
       min_num_ary.push(min_num.slice(min_num_int * NUM_DIGITS));
     }
-
 
     // console.log('--max', max_num_ary);
     // console.log('--min', min_num_ary);
@@ -111,9 +113,11 @@ const multiply = function (num1, num2) {
             // NOTE: 补充丢失的前导 0
             let n = Number(max_num_ary[i][j]) * Number(min_num_ary[k]) + '';
             let n_leng = String(n).length;
+
             if (n_leng < NUM_DIGITS) {
               n = '0'.repeat(NUM_DIGITS - n_leng) + n;
             }
+
             r.push(n);
           }
         }
@@ -126,6 +130,7 @@ const multiply = function (num1, num2) {
       let step = 0;
       let l_mod = min_num_mod === 0 ? (l % min_num_int) : (l % (min_num_int + 1));
       let min_num_count = min_num_mod === 0 ? Math.floor(l / min_num_int) : Math.floor(l / (min_num_int + 1));
+
       if (l_mod === 0) {
         // 偏移一位
         step = min_num_count;
@@ -142,6 +147,7 @@ const multiply = function (num1, num2) {
 
       // r[l] 字符少于 str.slice(0, -step)，r[l] 有没有前导 0 均没有影响
       let n = BigInt(r[l]) + BigInt(str_slice_num) + '';
+
       if (r[l].length < str_slice_num.length) {
         if (PRE_ZERO_REG.test(str_slice_num)) {
           if (str_slice_num.length > n.length) {
@@ -166,9 +172,11 @@ const multiply = function (num1, num2) {
       }
     }
   }
+
   if (str.split('').every(item => item === '0')) {
     str = '0';
   }
+
   return str;
 };
 

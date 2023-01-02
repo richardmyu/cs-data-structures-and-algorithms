@@ -14,6 +14,7 @@ const testFn = require('./test');
  */
 const isValidSudoku = function (board) {
   let r = [];
+
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
       if (board[i][j] !== '.') {
@@ -24,6 +25,7 @@ const isValidSudoku = function (board) {
             return false;
           }
         }
+
         for (let m = i + 1; m < 9; m++) {
           // col
           if (board[i][j] === board[m][j]) {
@@ -47,7 +49,9 @@ const isValidSudoku = function (board) {
       }
     }
   }
+
   r = [];
+
   for (let i = 0; i < 3; i++) {
     for (let j = 3; j < 6; j++) {
       if (board[i][j] !== '.') {
@@ -60,7 +64,9 @@ const isValidSudoku = function (board) {
       }
     }
   }
+
   r = [];
+
   for (let i = 0; i < 3; i++) {
     for (let j = 6; j < 9; j++) {
       if (board[i][j] !== '.') {
@@ -73,7 +79,9 @@ const isValidSudoku = function (board) {
       }
     }
   }
+
   r = [];
+
   for (let i = 3; i < 6; i++) {
     for (let j = 0; j < 3; j++) {
       if (board[i][j] !== '.') {
@@ -86,7 +94,9 @@ const isValidSudoku = function (board) {
       }
     }
   }
+
   r = [];
+
   for (let i = 3; i < 6; i++) {
     for (let j = 3; j < 6; j++) {
       if (board[i][j] !== '.') {
@@ -99,7 +109,9 @@ const isValidSudoku = function (board) {
       }
     }
   }
+
   r = [];
+
   for (let i = 3; i < 6; i++) {
     for (let j = 6; j < 9; j++) {
       if (board[i][j] !== '.') {
@@ -112,7 +124,9 @@ const isValidSudoku = function (board) {
       }
     }
   }
+
   r = [];
+
   for (let i = 6; i < 9; i++) {
     for (let j = 0; j < 3; j++) {
       if (board[i][j] !== '.') {
@@ -125,7 +139,9 @@ const isValidSudoku = function (board) {
       }
     }
   }
+
   r = [];
+
   for (let i = 6; i < 9; i++) {
     for (let j = 3; j < 6; j++) {
       if (board[i][j] !== '.') {
@@ -138,7 +154,9 @@ const isValidSudoku = function (board) {
       }
     }
   }
+
   r = [];
+
   for (let i = 6; i < 9; i++) {
     for (let j = 6; j < 9; j++) {
       if (board[i][j] !== '.') {

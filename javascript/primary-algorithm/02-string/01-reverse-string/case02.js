@@ -10,11 +10,12 @@ const testFn = require('./test');
  */
 
 /**
- * @param {character[]} s
- * @return {void} Do not return anything, modify s in-place instead.
+ * @param {array} s
+ * @return {void}
  */
 const reverseString = function (s) {
   let leng = s.length;
+
   if (leng % 2 === 0) {
     for (let i = 0; i < Math.floor(leng / 2); i++) {
       let a = s[i];
@@ -30,6 +31,7 @@ const reverseString = function (s) {
       s[i] = b;
     }
   }
+
   return s;
 };
 

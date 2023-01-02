@@ -15,7 +15,7 @@ const testFn = require('./test');
 /**
  * @param {string} s
  * @param {string[]} words
- * @return {number[]}
+ * @return {array}
  */
 // TODO: 内存溢出
 const findSubstring = function (s, words) {
@@ -29,9 +29,11 @@ const findSubstring = function (s, words) {
   //     r.push(reg.index);
   //   }
   // }
+
   for (let i = 0; i < l.length; i++) {
     let nextInd = s.indexOf(l[i]);
     let prevInd = s.lastIndexOf(l[i]);
+
     if (nextInd === prevInd) {
       if (nextInd !== -1) {
         r.push(nextInd);
@@ -40,22 +42,28 @@ const findSubstring = function (s, words) {
       if (nextInd !== -1) {
         r.push(nextInd);
       }
+
       if (prevInd !== -1) {
         r.push(prevInd);
       }
+
       while (s.indexOf(l[i], nextInd + 1) !== s.slice(0, prevInd + l[i].length).lastIndexOf(l[i])) {
         nextInd = s.indexOf(l[i], nextInd + 1);
         prevInd = s.slice(0, prevInd + l[i].length - 1).lastIndexOf(l[i]);
+
         if (nextInd !== -1) {
           r.push(nextInd);
         }
+
         if (prevInd !== -1) {
           r.push(prevInd);
         }
       }
     }
   }
+
   r = [...new Set(r)];
+
   return r.sort((a, b) => a - b);
 };
 
@@ -64,20 +72,26 @@ const comb = function (words) {
   if (!Array.isArray(words)) {
     return;
   }
+
   let r = [];
   let leng = words.length;
+
   if (leng === 0) {
     r = [];
   }
+
   if (leng === 1) {
     r.push(words);
   }
+
   if (leng === 2) {
     r.push(words[0].concat(words[1]));
     r.push(words[1].concat(words[0]));
   }
+
   if (leng > 2) {
     let basicLeng = words[0].length;
+
     for (let i = 0; i < leng; i++) {
       let ary = comb(words.slice(0, i).concat(words.slice(i + 1)));
       // 组合后的元素长度
@@ -92,6 +106,7 @@ const comb = function (words) {
       }
     }
   }
+
   return [...new Set(r)];
 };
 

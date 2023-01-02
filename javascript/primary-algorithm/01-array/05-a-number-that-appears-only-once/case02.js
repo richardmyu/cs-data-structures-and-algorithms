@@ -9,14 +9,16 @@ const testFn = require('./test');
  */
 
 /**
- * @param {number[]} nums
+ * @param {array} nums
  * @return {number}
  */
 const singleNumber = function (nums) {
   if (!Array.isArray(nums)) {
     return;
   }
+
   nums = nums.sort((a, b) => a - b);
+
   if (nums.indexOf(nums[0]) === nums.lastIndexOf(nums[0])) {
     return nums[0];
   } else {

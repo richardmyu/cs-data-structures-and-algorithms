@@ -19,6 +19,7 @@ const isAnagram = function (s, t) {
   if (s.length !== t.length) {
     return false;
   }
+
   for (let i = 0; i < s.length; i++) {
     if (!t.includes(s[i])) {
       return false;
@@ -26,11 +27,13 @@ const isAnagram = function (s, t) {
       let reg = new RegExp(s[i], 'g');
       let a = s.match(reg) || [];
       let b = t.match(reg) || [];
+
       if (a.length !== b.length) {
         return false;
       }
     }
   }
+
   return true;
 };
 

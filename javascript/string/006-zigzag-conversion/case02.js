@@ -20,12 +20,14 @@ const convert = function (s, numRows) {
   if (numRows <= 1) {
     return s;
   }
+
   let leng = s.length;
   let ary = [];
   let step = 2 * numRows - 2;
 
   for (let j = 0; j < numRows; j++) {
     ary[j] = '';
+
     for (let i = 1; i <= leng; i++) {
       if (j < 1) {
         ary[j] += ((i % step) === (j + 1)) ? s[i - 1] : '';

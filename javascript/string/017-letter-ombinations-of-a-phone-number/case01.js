@@ -16,6 +16,7 @@ const letterCombinations = function (digits) {
   if (digits.length > 5 || /[^2-9]/.test(digits)) {
     return false;
   }
+
   const leng = digits.length;
   const mapList = {
     2: ['a', 'b', 'c'],
@@ -28,6 +29,7 @@ const letterCombinations = function (digits) {
     9: ['w', 'x', 'y', 'z']
   };
   let result = [];
+
   if (leng === 0) {
     result = [];
   } else if (leng === 1) {
@@ -57,6 +59,7 @@ const letterCombinations = function (digits) {
       }
     }
   }
+
   return result;
 };
 

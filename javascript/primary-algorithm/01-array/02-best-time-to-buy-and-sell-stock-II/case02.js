@@ -9,20 +9,23 @@ const testFn = require('./test');
  */
 
 /**
- * @param {number[]} prices
+ * @param {array} prices
  * @return {number}
  */
 const maxProfit = function (prices) {
   if (!Array.isArray(prices)) {
     return;
   }
+
   let r = 0;
+
   for (let i = 1; i < prices.length; i++) {
     let diff = prices[i] - prices[i - 1];
     if (diff > 0) {
       r = r + diff;
     }
   }
+
   return r;
 };
 

@@ -14,6 +14,7 @@ const testFn = require('./test');
  */
 const reverse = function (x) {
   let r = 0;
+
   if (x < 0) {
     r = Number(String(x).slice(1).split('').reverse().join('')) * -1;
     r = r >= (Math.pow(-2, 31)) ? r : 0;
@@ -21,6 +22,7 @@ const reverse = function (x) {
     r = Number(String(x).split('').reverse().join(''));
     r = r <= (Math.pow(2, 31) - 1) ? r : 0;
   }
+
   return r;
 };
 

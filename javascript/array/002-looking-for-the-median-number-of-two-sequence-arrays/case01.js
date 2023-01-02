@@ -9,8 +9,8 @@ const testFn = require('./test');
  */
 
 /**
- * @param {number[]} nums1
- * @param {number[]} nums2
+ * @param {array} nums1
+ * @param {array} nums2
  * @return {number}
  */
 const findMedianSortedArrays = function (nums1, nums2) {

@@ -18,9 +18,11 @@ const strStr = function (haystack, needle) {
   let indexAry = [];
   let index = 0;
   let flag = false;
+
   if (nLeng === 0) {
     return 0;
   }
+
   if (nLeng === hLeng) {
     if (haystack === needle) {
       return 0;
@@ -28,14 +30,17 @@ const strStr = function (haystack, needle) {
       return -1;
     }
   }
+
   for (let i = 0; i < hLeng - nLeng + 1; i++) {
     if (haystack[i] === needle[0]) {
       indexAry.push(i);
     }
   }
+
   if (indexAry.length === 0) {
     return -1;
   }
+
   for (let j = 0; j < indexAry.length; j++) {
     if (haystack.slice(indexAry[j], indexAry[j] + nLeng) === needle) {
       index = indexAry[j];
@@ -43,6 +48,7 @@ const strStr = function (haystack, needle) {
       break;
     }
   }
+
   return flag ? index : -1;
 };
 

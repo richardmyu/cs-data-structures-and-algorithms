@@ -9,9 +9,9 @@ const testFn = require('./test');
  */
 
 /**
- * @param {number[]} nums
+ * @param {array} nums
  * @param {number} target
- * @return {number[]}
+ * @return {array}
  */
 const twoSum = function (nums, target) {
   for (let k = 0; k < nums.length; k++) {

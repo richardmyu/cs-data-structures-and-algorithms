@@ -12,7 +12,7 @@ const testFn = require('./test');
 /**
  * @param {string} s
  * @param {string[]} words
- * @return {number[]}
+ * @return {array}
  */
 // TODO: sorry, 还是内存溢出
 const findSubstring = function (s, words) {
@@ -26,6 +26,7 @@ const findSubstring = function (s, words) {
     let flag;
     let nextIndex = -1;
     obj[words[i] + i] = [];
+
     while ((flag = s.indexOf(words[i], nextIndex + 1)) !== -1) {
       nextIndex = flag;
       obj[words[i] + i].push(flag);
@@ -34,23 +35,28 @@ const findSubstring = function (s, words) {
 
   let valueList = comb(Object.values(obj));
   // console.log('valueList', valueList);
+
   for (let i = 0; i < valueList.length; i++) {
     if (valueList[i].every((item, index) => item === (valueList[i][0] + basicLeng * index))) {
       r.push(valueList[i][0]);
     }
   }
+
   r = [...new Set(r)];
   // console.log(r);
+
   return r.sort((a, b) => a - b);
 };
 
 const comb = function (diList) {
   let r = [];
   let leng = diList.length;
+
   if (leng === 0 || leng === 1) {
     r = diList;
     return r;
   }
+
   if (leng === 2) {
     for (let i = 0; i < diList[0].length; i++) {
       for (let j = 0; j < diList[1].length; j++) {
@@ -62,6 +68,7 @@ const comb = function (diList) {
       }
     }
   }
+
   if (leng > 2) {
     let ary = comb(diList.slice(1));
     for (let i = 0; i < ary.length; i++) {
@@ -75,6 +82,7 @@ const comb = function (diList) {
     }
 
   }
+
   return r;
 };
 

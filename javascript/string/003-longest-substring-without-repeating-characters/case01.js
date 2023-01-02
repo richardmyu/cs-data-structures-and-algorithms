@@ -18,9 +18,11 @@ const testFn = require('./test');
 const lengthOfLongestSubstring = function (s) {
   let ary = [];
   let str = '';
+
   for (let i = 0; i < s.length; i++) {
     for (let j = i + 1; j < s.length; j++) {
       str = s.slice(i, j);
+
       if (str.includes(s[j])) {
         ary[i] = s.slice(i, j);
         break;
@@ -28,6 +30,7 @@ const lengthOfLongestSubstring = function (s) {
         if (j === (s.length - 1)) {
           ary[i] = s.slice(i, s.length);
         }
+
         continue;
       }
     }
@@ -40,4 +43,4 @@ const lengthOfLongestSubstring = function (s) {
   return str ? str.length : s.length;
 };
 
-testFn(lengthOfLongestSubstring,'解法 1');
+testFn(lengthOfLongestSubstring, '解法 1');
