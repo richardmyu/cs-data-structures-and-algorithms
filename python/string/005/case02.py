@@ -1,6 +1,9 @@
-# -*- coding: utf-8 -*-
-# 基于 case01 改造，第一次匹配从最大长度开始，
-# 避免过多的小匹配而影响性能
+"""
+基于 case01 改造，第一次匹配从最大长度开始，
+避免过多的小匹配而影响性能
+"""
+
+
 def longestPalindrome(s):
     s_len = len(s)
     subs = ''
@@ -38,7 +41,7 @@ def longestPalindrome(s):
 
 
 def isPalindrome(s):
-    if (len(s) == 0 or len(s) == 1):
+    if len(s) == 0 or len(s) == 1:
         return True
     # mid = 0
     # if s % 2 == 0:
@@ -54,14 +57,3 @@ def isPalindrome(s):
     #             and value != right_str[len(right_str) - 1 - index]):
     #         return False
     # return True
-
-
-print(longestPalindrome('aba'))
-# print(longestPalindrome('abcd'))
-# print(longestPalindrome('abcba'))
-# print(longestPalindrome('abcda'))
-# print(longestPalindrome('abcacba'))
-# print(
-#     longestPalindrome(
-#         'abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababa'
-#     ))

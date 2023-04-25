@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import unittest
 from case01 import lengthOfLongestSubstring as fn
 

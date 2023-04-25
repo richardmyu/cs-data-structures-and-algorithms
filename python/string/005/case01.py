@@ -1,7 +1,10 @@
-# -*- coding: utf-8 -*-
-# 1.以同一个子字符分割字符，获得多个可能是回文的子串
-# 2.构造回文函数进行判断，
-# 3.获取最长回文子串
+"""
+1.以同一个子字符分割字符，获得多个可能是回文的子串
+2.构造回文函数进行判断，
+3.获取最长回文子串
+"""
+
+
 def longestPalindrome(s: str) -> str:
     s_len = len(s)
     subs = ''
@@ -19,7 +22,7 @@ def longestPalindrome(s: str) -> str:
         while True:
             next_index = s.find(value, next_index)
             if next_index > 0:
-                list.append(s[index:next_index + 1])
+                list.append(s[index : next_index + 1])
                 next_index = next_index + 1
             else:
                 break
@@ -39,27 +42,11 @@ def longestPalindrome(s: str) -> str:
 
 
 def isPalindrome(s: str) -> bool:
-    if (len(s) == 0 or len(s) == 1):
+    if len(s) == 0 or len(s) == 1:
         return True
 
     for index, value in enumerate(s):
-        if (index <= int(len(s) / 2) and value != s[len(s) - 1 - index]):
+        if index <= int(len(s) / 2) and value != s[len(s) - 1 - index]:
             return False
 
     return True
-
-
-# print(longestPalindrome('aba'))
-# print(longestPalindrome('abc'))
-# print(longestPalindrome('abcba'))
-# print(longestPalindrome('abcda'))
-# print(longestPalindrome('abcacba'))
-# print(
-#     longestPalindrome(
-#         'abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababa'
-#     ))
-# print(isPalindrome('aba'))
-# print(isPalindrome('abc'))
-# print(isPalindrome('abcba'))
-# print(isPalindrome('abcbc'))
-# print(isPalindrome('abcda'))

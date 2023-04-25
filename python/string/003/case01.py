@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 def lengthOfLongestSubstring(s: str) -> int:
     s_len = len(s)
     subs = ''
@@ -17,8 +14,7 @@ def lengthOfLongestSubstring(s: str) -> int:
             subs += s[i]
         else:
             subs_len = len(subs) if len(subs) > subs_len else subs_len
-            # subs = ''
-            subs = s[s[:i].rindex(s[i]) + 1:i + 1]
+            subs = s[s[:i].rindex(s[i]) + 1 : i + 1]
 
     subs_len = len(subs) if len(subs) > subs_len else subs_len
 
