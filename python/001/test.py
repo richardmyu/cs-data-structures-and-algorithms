@@ -3,7 +3,7 @@ from case01 import Solution
 
 
 class TestCase(unittest.TestCase):
-    def test_solution(self):
+    def test_two_sum(self):
         solution = Solution()
         self.assertEqual(solution.twoSum([2, 7, 11, 15], 9), [0, 1])
         self.assertEqual(solution.twoSum([2, 11, 7, 15], 9), [0, 2])

@@ -1,38 +1,40 @@
 import unittest
-from case01 import longestPalindrome as fn1
-from case02 import longestPalindrome as fn2
+from case01 import Solution1
+from case02 import Solution2
 
 
 class TestStringCase(unittest.TestCase):
     def test_longest_palindrome_1(self):
-        self.assertEqual(fn1(""), "")
-        self.assertEqual(fn1(" "), " ")
-        self.assertEqual(fn1("abc"), "a")
-        self.assertEqual(fn1("abcda"), "a")
-        self.assertEqual(fn1("babad"), "bab")
-        self.assertEqual(fn1("cbbd"), "bb")
-        self.assertEqual(fn1("abcacba"), "abcacba")
-        self.assertEqual(fn1("abbcabba"), "abba")
-        self.assertEqual(fn1("abcdasdfghjkldcba"), "a")
+        solution1 = Solution1()
+        self.assertEqual(solution1.longestPalindrome(""), "")
+        self.assertEqual(solution1.longestPalindrome(" "), " ")
+        self.assertEqual(solution1.longestPalindrome("abc"), "a")
+        self.assertEqual(solution1.longestPalindrome("abcda"), "a")
+        self.assertEqual(solution1.longestPalindrome("babad"), "bab")
+        self.assertEqual(solution1.longestPalindrome("cbbd"), "bsolution1")
+        self.assertEqual(solution1.longestPalindrome("abcacba"), "abcacba")
+        self.assertEqual(solution1.longestPalindrome("abbcabba"), "abba")
+        self.assertEqual(solution1.longestPalindrome("abcdasdfghjkldcba"), "a")
         self.assertEqual(
-            fn1(
+            solution1.longestPalindrome(
                 "abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababa"
             ),
             "abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababa",
         )
 
     def test_longest_palindrome_2(self):
-        self.assertEqual(fn2(""), "")
-        self.assertEqual(fn2(" "), " ")
-        self.assertEqual(fn2("abc"), "a")
-        self.assertEqual(fn2("abcda"), "a")
-        self.assertEqual(fn2("babad"), "bab")
-        self.assertEqual(fn2("cbbd"), "bb")
-        self.assertEqual(fn2("abcacba"), "abcacba")
-        self.assertEqual(fn2("abbcabba"), "abba")
-        self.assertEqual(fn2("abcdasdfghjkldcba"), "a")
+        solution2 = Solution2()
+        self.assertEqual(solution2.longestPalindrome(""), "")
+        self.assertEqual(solution2.longestPalindrome(" "), " ")
+        self.assertEqual(solution2.longestPalindrome("abc"), "a")
+        self.assertEqual(solution2.longestPalindrome("abcda"), "a")
+        self.assertEqual(solution2.longestPalindrome("babad"), "bab")
+        self.assertEqual(solution2.longestPalindrome("cbbd"), "bb")
+        self.assertEqual(solution2.longestPalindrome("abcacba"), "abcacba")
+        self.assertEqual(solution2.longestPalindrome("abbcabba"), "abba")
+        self.assertEqual(solution2.longestPalindrome("abcdasdfghjkldcba"), "a")
         self.assertEqual(
-            fn2(
+            solution2.longestPalindrome(
                 "abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababa"
             ),
             "abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababa",
