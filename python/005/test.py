@@ -11,7 +11,7 @@ class TestStringCase(unittest.TestCase):
         self.assertEqual(solution1.longestPalindrome("abc"), "a")
         self.assertEqual(solution1.longestPalindrome("abcda"), "a")
         self.assertEqual(solution1.longestPalindrome("babad"), "bab")
-        self.assertEqual(solution1.longestPalindrome("cbbd"), "bsolution1")
+        self.assertEqual(solution1.longestPalindrome(" "), "bb")
         self.assertEqual(solution1.longestPalindrome("abcacba"), "abcacba")
         self.assertEqual(solution1.longestPalindrome("abbcabba"), "abba")
         self.assertEqual(solution1.longestPalindrome("abcdasdfghjkldcba"), "a")

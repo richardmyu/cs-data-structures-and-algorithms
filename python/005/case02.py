@@ -5,7 +5,7 @@
 
 
 class Solution2:
-    def longestPalindrome(self, s):
+    def longestPalindrome(self, s: str) -> str:
         s_len = len(s)
         subs = ''
         has_palindrome = False
@@ -26,21 +26,33 @@ class Solution2:
                 if next_index > 0:
                     str = s[index:start_index]
 
-                    if isPalindrome(str):
+                    if self.isPalindrome(str):
                         has_palindrome = True
 
                         if len(subs) < len(str):
                             subs = str
 
                 start_index = start_index - 1
-                # print(start_index, index)
 
         if has_palindrome:
             return subs
         else:
             return s
 
+    def isPalindrome(self, s: str) -> bool:
+        if len(s) == 0 or len(s) == 1:
+            return True
 
-def isPalindrome(s):
-    if len(s) == 0 or len(s) == 1:
+        for index, value in enumerate(s):
+            if index <= int(len(s) / 2) and value != s[len(s) - 1 - index]:
+                return False
+
         return True
+
+
+solution2 = Solution2()
+print(solution2.longestPalindrome(""))  # ''
+print(solution2.longestPalindrome(" "))  # ' '
+print(solution2.longestPalindrome("abc"))  # 'a'
+print(solution2.longestPalindrome("abcda"))  # 'a'
+print(solution2.longestPalindrome("babad"))  # 'bab'

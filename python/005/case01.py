@@ -50,3 +50,11 @@ class Solution1:
                 return False
 
         return True
+
+
+solution1 = Solution1()
+print(solution1.longestPalindrome(""))  # ''
+print(solution1.longestPalindrome(" "))  # ' '
+print(solution1.longestPalindrome("abc"))  # 'a'
+print(solution1.longestPalindrome("abcda"))  # 'a'
+print(solution1.longestPalindrome("babad"))  # 'bab'
