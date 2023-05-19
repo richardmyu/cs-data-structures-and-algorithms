@@ -7,6 +7,7 @@
 from typing import Optional
 from list_note import ListNode
 
+TODO: ListNode
 
 class Solution:
     def addTwoNumbers(
