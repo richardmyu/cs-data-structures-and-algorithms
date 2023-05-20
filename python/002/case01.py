@@ -1,23 +1,25 @@
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
 from typing import Optional
-from list_note import ListNode
 
-TODO: ListNode
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
 
 class Solution:
     def addTwoNumbers(
-        self, l1: Optional[ListNode], l2: Optional[ListNode]
+            self, l1: Optional[ListNode], l2: Optional[ListNode]
     ) -> Optional[ListNode]:
         print(l1)
-        for i in l1:
-            print('--i', i)
+        # for i in l1:
+        #     print('--i', i)
 
 
-soulution = Solution()
+list_node_1 = ListNode(2, 4)
+print(list_node_1.next)
+list_node_2 = ListNode([5, 6, 4])
+solution = Solution()
 
-print(soulution.addTwoNumbers(l1=[2, 4, 3], l2=[5, 6, 4]))
+print(solution.addTwoNumbers(list_node_1, list_node_2))
