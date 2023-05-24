@@ -2,6 +2,8 @@ from typing import List
 
 
 class Solution:
+    # case 1
+    # 新建列表，存储不重复元素
     def remove_duplicates(self, nums: List[int]) -> int:
         ary = []
 
@@ -12,3 +14,4 @@ class Solution:
                 nums.remove(i)
 
         return len(nums)
+
