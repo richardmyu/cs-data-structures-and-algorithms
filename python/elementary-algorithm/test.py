@@ -1,6 +1,7 @@
 import unittest
 from el01 import Solution as Solution01
 from el02 import Solution as Solution02
+from el03 import Solution as Solution03
 
 
 class TestCase(unittest.TestCase):
@@ -19,6 +20,11 @@ class TestCase(unittest.TestCase):
         self.assertEqual(sol02.max_profit([7, 1, 5, 3, 6, 4]), 7)
         self.assertEqual(sol02.max_profit([1, 2, 3, 4, 5]), 4)
         self.assertEqual(sol02.max_profit([7, 6, 4, 3, 1]), 0)
+
+    def test_rotate(self):
+        sol03 = Solution03()
+        self.assertEqual(sol03.rotate([1, 2, 3, 4, 5, 6, 7], 3), [5, 6, 7, 1, 2, 3, 4])
+        self.assertEqual(sol03.rotate([-1, -100, 3, 99], 2), [3, 99, -1, -100])
 
 
 if __name__ == '__main__':
