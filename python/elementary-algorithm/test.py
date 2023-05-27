@@ -2,6 +2,7 @@ import unittest
 from el01 import Solution as Solution01
 from el02 import Solution as Solution02
 from el03 import Solution as Solution03
+from el04 import Solution as Solution04
 
 
 class TestCase(unittest.TestCase):
@@ -25,6 +26,12 @@ class TestCase(unittest.TestCase):
         sol03 = Solution03()
         self.assertEqual(sol03.rotate([1, 2, 3, 4, 5, 6, 7], 3), [5, 6, 7, 1, 2, 3, 4])
         self.assertEqual(sol03.rotate([-1, -100, 3, 99], 2), [3, 99, -1, -100])
+
+    def test_contains_duplicate(self):
+        sol04 = Solution04()
+        self.assertEqual(sol04.contains_duplicate([1, 2, 3, 1]), True)
+        self.assertEqual(sol04.contains_duplicate([1, 2, 3, 4]), False)
+        self.assertEqual(sol04.contains_duplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]), True)
 
 
 if __name__ == '__main__':
