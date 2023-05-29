@@ -17,7 +17,7 @@ class Solution:
         if nums[-1] != nums[-2]:
             res = nums[-1]
 
-        for i in range(1, len(nums) - 2):
+        for i in range(1, len(nums) - 1):
             if nums[i - 1] != nums[i] and nums[i] != nums[i + 1]:
                 res = nums[i]
 
