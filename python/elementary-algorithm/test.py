@@ -4,7 +4,7 @@ from el02 import Solution as Solution02
 from el03 import Solution as Solution03
 from el04 import Solution as Solution04
 from el05 import Solution as Solution05
-from el05 import Solution as Solution05
+from el06 import Solution as Solution06
 
 
 class TestCase(unittest.TestCase):
