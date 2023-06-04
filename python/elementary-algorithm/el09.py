@@ -2,12 +2,26 @@ from typing import List
 
 
 class Solution:
+    # case 01
+    # def two_sum(self, nums: List[int], target: int) -> List[int]:
+    #     for i in nums:
+    #         idx = nums.index(i)
+    #         for j in nums[idx + 1:]:
+    #             if i + j == target:
+    #                 return [idx, nums[idx + 1:].index(j) + idx + 1]
+
+    # case 02
     def two_sum(self, nums: List[int], target: int) -> List[int]:
+        diff = []
         for i in nums:
-            idx = nums.index(i)
-            for j in nums[idx + 1:]:
-                if i + j == target:
+            diff.append((i, nums.index(i), target - i))
+
+        for (i, idx, j) in diff:
+            if j in (nums[0:idx] + nums[idx + 1:]):
+                if i == j:
                     return [idx, nums[idx + 1:].index(j) + idx + 1]
+                else:
+                    return [idx, nums.index(j)]
 
 
 solution = Solution()
