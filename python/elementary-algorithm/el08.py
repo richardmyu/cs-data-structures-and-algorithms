@@ -2,7 +2,8 @@ from typing import List
 
 
 class Solution:
-    def move_zeroes(self, nums: List[int]) -> None:
+    @staticmethod
+    def move_zeroes(nums: List[int]) -> None:
         for i in nums:
             if i == 0:
                 nums.remove(i)

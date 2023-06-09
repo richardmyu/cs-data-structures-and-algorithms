@@ -3,7 +3,8 @@ from typing import List
 
 class Solution:
     # case 01
-    def is_valid_sudoku(self, board: List[List[str]]) -> bool:
+    @staticmethod
+    def is_valid_sudoku(board: List[List[str]]) -> bool:
         for i in range(9):
             # 横
             a_x = []

@@ -3,7 +3,8 @@ from typing import List
 
 class Solution:
     # case 01
-    # def two_sum(self, nums: List[int], target: int) -> List[int]:
+    # @staticmethod
+    # def two_sum(nums: List[int], target: int) -> List[int]:
     #     for i in nums:
     #         idx = nums.index(i)
     #         for j in nums[idx + 1:]:
@@ -11,7 +12,8 @@ class Solution:
     #                 return [idx, nums[idx + 1:].index(j) + idx + 1]
 
     # case 02
-    def two_sum(self, nums: List[int], target: int) -> List[int]:
+    @staticmethod
+    def two_sum(nums: List[int], target: int) -> List[int]:
         diff = []
         for i in nums:
             diff.append((i, nums.index(i), target - i))
