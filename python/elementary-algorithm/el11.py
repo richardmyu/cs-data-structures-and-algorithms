@@ -1,17 +1,17 @@
 from typing import List
+import copy
 
 
 class Solution:
     @staticmethod
     def rotate(matrix: List[List[int]]) -> None:
+        deep_copy_matrix = copy.deepcopy(matrix)
         for i in range(len(matrix)):
-            for j in matrix[:]:
+            for j in deep_copy_matrix:
                 print(i, j, j[i])
                 idj = matrix.index(j)
-                matrix[idj].append(j[i])
-                matrix[idj].pop(i)
-                # j.pop(i)
-                # j.append(j[i])
+                matrix[int(idj / 3)].append(j[i])
+                matrix[int(idj / 3)].pop(i)
 
         return matrix
 
