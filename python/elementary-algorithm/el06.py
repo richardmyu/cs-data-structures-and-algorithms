@@ -22,21 +22,23 @@ class Solution:
                 min_nums.remove(i)
                 max_nums.remove(i)
 
+        # 方便测试，进行了排序
+        res.sort()
         return res
 
 
-solution = Solution()
-print(solution.intersect([1, 2, 2, 1], [2, 2]))
-# [2, 2]
-print(solution.intersect([4, 9, 5], [9, 4, 9, 8, 4]))
-# [4, 9]
-print(solution.intersect([4, 9, 5], [9, 4, 9, 8, 4, 5, 5]))
-# [4, 9, 5]
-print(solution.intersect([4, 9, 5, 8], [9, 4, 9, 8, 4]))
-# [4, 8, 9]
-print(solution.intersect([4, 9, 5, 4, 9], [9, 4, 9, 8, 4]))
-# [4, 4, 9, 9]
-print(solution.intersect([3, 1, 2], [1, 1]))
-# [1]
-print(solution.intersect([3, 1, 2, 1, 2], [1, 1, 2, 1, 1]))
-# [1, 2, 1]
+# solution = Solution()
+# print(solution.intersect([1, 2, 2, 1], [2, 2]))
+# # [2, 2]
+# print(solution.intersect([4, 9, 5], [9, 4, 9, 8, 4]))
+# # [4, 9]
+# print(solution.intersect([4, 9, 5], [9, 4, 9, 8, 4, 5, 5]))
+# # [4, 5, 9]
+# print(solution.intersect([4, 9, 5, 8], [9, 4, 9, 8, 4]))
+# # [4, 8, 9]
+# print(solution.intersect([4, 9, 5, 4, 9], [9, 4, 9, 8, 4]))
+# # [4, 4, 9, 9]
+# print(solution.intersect([3, 1, 2], [1, 1]))
+# # [1]
+# print(solution.intersect([3, 1, 2, 1, 2], [1, 1, 2, 1, 1]))
+# # [1, 1, 2]

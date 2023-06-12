@@ -11,12 +11,12 @@ class Solution:
         return nums
 
 
-solution = Solution()
-print(solution.move_zeroes([0]))
-# [0]
-print(solution.move_zeroes([0, 0, 1]))
-# [1, 0, 0]
-print(solution.move_zeroes([0, 1, 0, 3, 12]))
-# [1, 3, 12, 0, 0]
-print(solution.move_zeroes([0, 1, 4, 0, 3, 12]))
-# [1, 4, 3, 12, 0, 0]
+# solution = Solution()
+# print(solution.move_zeroes([0]))
+# # [0]
+# print(solution.move_zeroes([0, 0, 1]))
+# # [1, 0, 0]
+# print(solution.move_zeroes([0, 1, 0, 3, 12]))
+# # [1, 3, 12, 0, 0]
+# print(solution.move_zeroes([0, 1, 4, 0, 3, 12]))
+# # [1, 4, 3, 12, 0, 0]

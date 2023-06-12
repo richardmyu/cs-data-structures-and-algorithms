@@ -15,18 +15,18 @@ class Solution:
                 return Solution.plus_one(digits[0:-1]) + [0]
 
 
-solution = Solution()
-print(solution.plus_one([1, 2, 3]))
-# [1, 2, 4]
-print(solution.plus_one([1, 2, 9]))
-# [1, 3, 0]
-print(solution.plus_one([1, 2, 9, 9, 9, 9]))
-# [1, 3, 0, 0, 0, 0]
-print(solution.plus_one([4, 3, 2, 1]))
-# [4, 3, 2, 2]
-print(solution.plus_one([0]))
-# [1]
-print(solution.plus_one([9]))
-# [1, 0]
-print(solution.plus_one([9, 9]))
-# [1, 0, 0]
+# solution = Solution()
+# print(solution.plus_one([1, 2, 3]))
+# # [1, 2, 4]
+# print(solution.plus_one([1, 2, 9]))
+# # [1, 3, 0]
+# print(solution.plus_one([1, 2, 9, 9, 9, 9]))
+# # [1, 3, 0, 0, 0, 0]
+# print(solution.plus_one([4, 3, 2, 1]))
+# # [4, 3, 2, 2]
+# print(solution.plus_one([0]))
+# # [1]
+# print(solution.plus_one([9]))
+# # [1, 0]
+# print(solution.plus_one([9, 9]))
+# # [1, 0, 0]
