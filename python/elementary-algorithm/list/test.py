@@ -1,15 +1,15 @@
 import unittest
-from el01 import Solution as Solution01
-from el02 import Solution as Solution02
-from el03 import Solution as Solution03
-from el04 import Solution as Solution04
-from el05 import Solution as Solution05
-from el06 import Solution as Solution06
-from el07 import Solution as Solution07
-from el08 import Solution as Solution08
-from el09 import Solution as Solution09
-from el10 import Solution as Solution10
-from el11 import Solution as Solution11
+from list_01 import Solution as Solution01
+from list_02 import Solution as Solution02
+from list_03 import Solution as Solution03
+from list_04 import Solution as Solution04
+from list_05 import Solution as Solution05
+from list_06 import Solution as Solution06
+from list_07 import Solution as Solution07
+from list_08 import Solution as Solution08
+from list_09 import Solution as Solution09
+from list_10 import Solution as Solution10
+from list_11 import Solution as Solution11
 
 
 class TestCase(unittest.TestCase):

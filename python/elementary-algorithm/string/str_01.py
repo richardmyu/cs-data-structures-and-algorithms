@@ -12,8 +12,8 @@ class Solution:
         return s
 
 
-solution = Solution()
-print(solution.reverse_string(["h", "e", "l", "l", "o"]))
-# ["o", "l", "l", "e", "h"]
-print(solution.reverse_string(["H", "a", "n", "n", "a", "h"]))
-# ["h", "a", "n", "n", "a", "H"]
+# solution = Solution()
+# print(solution.reverse_string(["h", "e", "l", "l", "o"]))
+# # ["o", "l", "l", "e", "h"]
+# print(solution.reverse_string(["H", "a", "n", "n", "a", "h"]))
+# # ["h", "a", "n", "n", "a", "H"]
