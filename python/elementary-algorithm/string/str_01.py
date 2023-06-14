@@ -2,7 +2,8 @@ from typing import List
 
 
 class Solution:
-    def reverse_string(self, s: List[str]) -> None:
+    @staticmethod
+    def reverse_string(s: List[str]) -> None:
         # case 01
         length = len(s)
 
