@@ -2,6 +2,7 @@ import unittest
 from str_01 import Solution as Solution01
 from str_02 import Solution as Solution02
 from str_03 import Solution as Solution03
+from str_04 import Solution as Solution04
 
 
 class TestCase(unittest.TestCase):
@@ -24,6 +25,12 @@ class TestCase(unittest.TestCase):
         self.assertEqual(sol.first_uniq_char("leetcode"), 0)
         self.assertEqual(sol.first_uniq_char("loveleetcode"), 2)
         self.assertEqual(sol.first_uniq_char("aabb"), -1)
+
+    def test_is_anagram(self):
+        sol = Solution04()
+        self.assertEqual(sol.is_anagram("anagram", "nagaram"), True)
+        self.assertEqual(sol.is_anagram("rat", "car"), False)
+        self.assertEqual(sol.is_anagram("anagram", "Nagaram"), False)
 
 
 if __name__ == '__main__':
