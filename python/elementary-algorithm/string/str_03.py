@@ -2,6 +2,7 @@ from typing import List
 
 
 class Solution:
+    # case 01
     @staticmethod
     def first_uniq_char(s: str) -> int:
         idx = -1
@@ -13,10 +14,10 @@ class Solution:
         return idx
 
 
-solution = Solution()
-print(solution.first_uniq_char("leetcode"))
-# 0
-print(solution.first_uniq_char("loveleetcode"))
-# 2
-print(solution.first_uniq_char("aabb"))
-# -1
+# solution = Solution()
+# print(solution.first_uniq_char("leetcode"))
+# # 0
+# print(solution.first_uniq_char("loveleetcode"))
+# # 2
+# print(solution.first_uniq_char("aabb"))
+# # -1
