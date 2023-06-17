@@ -4,6 +4,7 @@ from str_02 import Solution as Solution02
 from str_03 import Solution as Solution03
 from str_04 import Solution as Solution04
 from str_05 import Solution as Solution05
+from str_06 import Solution as Solution06
 
 
 class TestCase(unittest.TestCase):
@@ -38,6 +39,18 @@ class TestCase(unittest.TestCase):
         self.assertEqual(sol.is_palindrome("A man, a plan, a canal: Panama"), True)
         self.assertEqual(sol.is_palindrome("race a car"), False)
         self.assertEqual(sol.is_palindrome(""), True)
+
+    def test_my_atoi(self):
+        sol = Solution06()
+        self.assertEqual(sol.my_atoi(""), 0)
+        self.assertEqual(sol.my_atoi("+"), 0)
+        self.assertEqual(sol.my_atoi("42"), 42)
+        self.assertEqual(sol.my_atoi("2147483648"), 2147483647)
+        self.assertEqual(sol.my_atoi("-91283472332"), -2147483648)
+        self.assertEqual(sol.my_atoi("  -42"), -42)
+        self.assertEqual(sol.my_atoi("4193 with words"), 4193)
+        self.assertEqual(sol.my_atoi("with words 4193"), 0)
+        self.assertEqual(sol.my_atoi("41.93 with words"), 41)
 
 
 if __name__ == '__main__':
