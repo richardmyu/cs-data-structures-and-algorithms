@@ -3,6 +3,7 @@ from str_01 import Solution as Solution01
 from str_02 import Solution as Solution02
 from str_03 import Solution as Solution03
 from str_04 import Solution as Solution04
+from str_05 import Solution as Solution05
 
 
 class TestCase(unittest.TestCase):
@@ -31,6 +32,12 @@ class TestCase(unittest.TestCase):
         self.assertEqual(sol.is_anagram("anagram", "nagaram"), True)
         self.assertEqual(sol.is_anagram("rat", "car"), False)
         self.assertEqual(sol.is_anagram("anagram", "Nagaram"), False)
+
+    def test_is_palindrome(self):
+        sol = Solution05()
+        self.assertEqual(sol.is_palindrome("A man, a plan, a canal: Panama"), True)
+        self.assertEqual(sol.is_palindrome("race a car"), False)
+        self.assertEqual(sol.is_palindrome(""), True)
 
 
 if __name__ == '__main__':
