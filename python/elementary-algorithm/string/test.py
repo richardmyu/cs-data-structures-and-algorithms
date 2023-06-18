@@ -5,6 +5,7 @@ from str_03 import Solution as Solution03
 from str_04 import Solution as Solution04
 from str_05 import Solution as Solution05
 from str_06 import Solution as Solution06
+from str_07 import Solution as Solution07
 
 
 class TestCase(unittest.TestCase):
@@ -51,6 +52,12 @@ class TestCase(unittest.TestCase):
         self.assertEqual(sol.my_atoi("4193 with words"), 4193)
         self.assertEqual(sol.my_atoi("with words 4193"), 0)
         self.assertEqual(sol.my_atoi("41.93 with words"), 41)
+
+    def test_str_str(self):
+        sol = Solution07()
+        self.assertEqual(sol.str_str(haystack="sadbutsad", needle="sad"), 0)
+        self.assertEqual(sol.str_str(haystack="sabutsad", needle="sad"), 5)
+        self.assertEqual(sol.str_str(haystack="leetcode", needle="leeto"), -1)
 
 
 if __name__ == '__main__':
