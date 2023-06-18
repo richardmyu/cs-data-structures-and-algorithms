@@ -6,6 +6,7 @@ from str_04 import Solution as Solution04
 from str_05 import Solution as Solution05
 from str_06 import Solution as Solution06
 from str_07 import Solution as Solution07
+from str_08 import Solution as Solution08
 
 
 class TestCase(unittest.TestCase):
@@ -58,6 +59,15 @@ class TestCase(unittest.TestCase):
         self.assertEqual(sol.str_str(haystack="sadbutsad", needle="sad"), 0)
         self.assertEqual(sol.str_str(haystack="sabutsad", needle="sad"), 5)
         self.assertEqual(sol.str_str(haystack="leetcode", needle="leeto"), -1)
+
+    def test_count_and_say(self):
+        sol = Solution08()
+        self.assertEqual(sol.count_and_say(1), "1")
+        self.assertEqual(sol.count_and_say(2), "11")
+        self.assertEqual(sol.count_and_say(3), "21")
+        self.assertEqual(sol.count_and_say(4), "1211")
+        self.assertEqual(sol.count_and_say(5), "111221")
+        self.assertEqual(sol.count_and_say(6), "312211")
 
 
 if __name__ == '__main__':
