@@ -1,6 +1,3 @@
-from typing import List
-
-
 class Solution:
     # case 01
     @staticmethod

@@ -1,7 +1,3 @@
-from typing import List
-import math
-
-
 class Solution:
     # case 01
     @staticmethod

@@ -7,6 +7,7 @@ from str_05 import Solution as Solution05
 from str_06 import Solution as Solution06
 from str_07 import Solution as Solution07
 from str_08 import Solution as Solution08
+from str_09 import Solution as Solution09
 
 
 class TestCase(unittest.TestCase):
@@ -68,6 +69,13 @@ class TestCase(unittest.TestCase):
         self.assertEqual(sol.count_and_say(4), "1211")
         self.assertEqual(sol.count_and_say(5), "111221")
         self.assertEqual(sol.count_and_say(6), "312211")
+
+    def test_longest_common_prefix(self):
+        sol = Solution09()
+        self.assertEqual(sol.longest_common_prefix(["flower", "flow", "flight"]), "fl")
+        self.assertEqual(sol.longest_common_prefix(["dog", "racecar", "car"]), "")
+        self.assertEqual(sol.longest_common_prefix(["rdog", "racecar", "rcar"]), "r")
+        self.assertEqual(sol.longest_common_prefix(["c", "acc", "ccc"]), "")
 
 
 if __name__ == '__main__':
