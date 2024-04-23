@@ -4,8 +4,8 @@
 """
 
 
-class Solution2:
-    def longestPalindrome(self, s: str) -> str:
+class Solution_2:
+    def longest_palindrome(self, s: str) -> str:
         s_len = len(s)
         subs = ''
         has_palindrome = False
@@ -51,8 +51,8 @@ class Solution2:
 
 
 solution2 = Solution2()
-print(solution2.longestPalindrome(""))  # ''
-print(solution2.longestPalindrome(" "))  # ' '
-print(solution2.longestPalindrome("abc"))  # 'a'
-print(solution2.longestPalindrome("abcda"))  # 'a'
-print(solution2.longestPalindrome("babad"))  # 'bab'
+print(solution2.longest_palindrome(""))  # ''
+print(solution2.longest_palindrome(" "))  # ' '
+print(solution2.longest_palindrome("abc"))  # 'a'
+print(solution2.longest_palindrome("abcda"))  # 'a'
+print(solution2.longest_palindrome("babad"))  # 'bab'

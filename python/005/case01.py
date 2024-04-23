@@ -5,8 +5,8 @@
 """
 
 
-class Solution1:
-    def longestPalindrome(self, s: str) -> str:
+class Solution_1:
+    def longest_palindrome(self, s: str) -> str:
         s_len = len(s)
         subs = ''
         list = []
@@ -53,8 +53,8 @@ class Solution1:
 
 
 solution1 = Solution1()
-print(solution1.longestPalindrome(""))  # ''
-print(solution1.longestPalindrome(" "))  # ' '
-print(solution1.longestPalindrome("abc"))  # 'a'
-print(solution1.longestPalindrome("abcda"))  # 'a'
-print(solution1.longestPalindrome("babad"))  # 'bab'
+print(solution1.longest_palindrome(""))  # ''
+print(solution1.longest_palindrome(" "))  # ' '
+print(solution1.longest_palindrome("abc"))  # 'a'
+print(solution1.longest_palindrome("abcda"))  # 'a'
+print(solution1.longest_palindrome("babad"))  # 'bab'

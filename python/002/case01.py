@@ -9,7 +9,7 @@ class ListNode:
 
 
 class Solution:
-    def addTwoNumbers(
+    def add_2(
             self, l1: Optional[ListNode], l2: Optional[ListNode]
     ) -> Optional[ListNode]:
         print(l1)
@@ -22,4 +22,4 @@ print(list_node_1.next)
 list_node_2 = ListNode([5, 6, 4])
 solution = Solution()
 
-print(solution.addTwoNumbers(list_node_1, list_node_2))
+print(solution.add_2(list_node_1, list_node_2))
